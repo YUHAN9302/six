@@ -44,15 +44,18 @@ TagManager:
   - name: "\u623F\u9593\u5E95"
     uniqueID: 3122720669
     locked: 0
-  - name: New Layer 2
+  - name: "\u4E92\u52D5\u7269\u4EF6"
     uniqueID: 465491157
     locked: 0
-  - name: New Layer 3
+  - name: "\u4E3B\u89D2"
     uniqueID: 2763768781
     locked: 0
-  - name: New Layer 4
+  - name: "\u524D\u666F\u4E92\u52D5"
     uniqueID: 3731997907
     locked: 0
-  - name: New Layer 5
+  - name: "UI\u5E95"
     uniqueID: 1926874153
+    locked: 0
+  - name: "UI\u4E0A"
+    uniqueID: 47168859
     locked: 0
