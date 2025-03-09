@@ -5,6 +5,7 @@ using UnityEngine;
 public class art_button : MonoBehaviour
 {
     public GameObject artButton;
+    public Animator animator;
     // Start is called before the first frame update
     void Start()
     {
@@ -32,6 +33,10 @@ public class art_button : MonoBehaviour
     {
         Debug.Log("查看畫作！");
         // 你可以在這裡觸發一些邏輯，例如顯示畫作的詳細信息。
+        if (animator != null)
+        {
+            animator.SetTrigger("畫中人掉淚");  // 播放動畫觸發器
+        }
     }
     // Update is called once per frame
     void Update()
