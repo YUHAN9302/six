@@ -10,6 +10,9 @@ public class 人物走路程式 : MonoBehaviour
 
     public bool canMove = true; // 是否允許移動
 
+    public float minX = -12f; // 左邊界
+    public float maxX = 13f;  // 右邊界
+
 
     // Start is called before the first frame update
     void Start()
@@ -60,6 +63,10 @@ public class 人物走路程式 : MonoBehaviour
         //rb.velocity = new Vector2(moveX, rb.velocity.y);
         transform.Translate(moveX* Time.deltaTime,0,0);
         // 設定 Animator 參數
+
+        float clampedX = Mathf.Clamp(transform.position.x, minX, maxX);
+        transform.position = new Vector3(clampedX, transform.position.y, transform.position.z);
+
         anim.SetBool("isWalking", moveX != 0);
     }
 }

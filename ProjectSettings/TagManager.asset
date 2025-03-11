@@ -59,6 +59,9 @@ TagManager:
   - name: "\u9ED1\u6846"
     uniqueID: 444151071
     locked: 0
+  - name: "\u8B8A\u9ED1\u5E95"
+    uniqueID: 2992064003
+    locked: 0
   - name: "UI\u5E95"
     uniqueID: 1926874153
     locked: 0
