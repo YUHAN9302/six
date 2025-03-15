@@ -8,10 +8,15 @@ using System;
 public class SetAndGetSaveData : MonoBehaviour
 {
     public TextMeshProUGUI[] Texts;
-    // Start is called before the first frame update
-    void Awake()
+    private void Awake()
     {
-        
+        DontDestroyOnLoad(gameObject);
+
+    }
+    // Start is called before the first frame update
+    void Start()
+    {
+
         for (int i = 0; i < 5; i++) {
             var (loadedPosition, saveTime) = FindObjectOfType<SaveManager>().LoadPlayerPosition(i+1);
             Texts[i].text = saveTime;
@@ -40,6 +45,7 @@ public class SetAndGetSaveData : MonoBehaviour
         var (loadedPosition, saveTime) = FindObjectOfType<SaveManager>().LoadPlayerPosition(ID);
         FindObjectOfType<SaveManager>().PlayerPos = loadedPosition;
         Debug.Log($"玩家位置載入成功：{loadedPosition}，存檔時間：{saveTime}");
+        gameObject.SetActive(false);
     }
     public void SaveData(int ID)
     {
