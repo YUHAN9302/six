@@ -6,12 +6,19 @@ public class art_button : MonoBehaviour
 {
     public GameObject artButton;
     public Animator animator;
+    public GameObject bookObject;
+
+
     // Start is called before the first frame update
     void Start()
     {
         if (artButton != null)
         {
             artButton.SetActive(false);
+        }
+        if (bookObject != null)
+        {
+            bookObject.SetActive(false); // 一開始隱藏書本
         }
     }
 
@@ -36,6 +43,10 @@ public class art_button : MonoBehaviour
         if (animator != null)
         {
             animator.SetTrigger("畫中人掉淚");  // 播放動畫觸發器
+        }
+        if (bookObject != null)
+        {
+            bookObject.SetActive(true);
         }
     }
     // Update is called once per frame
