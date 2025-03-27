@@ -8,7 +8,7 @@ public class art : MonoBehaviour
     public GameObject bookObject; // 書本物件
 
 
-    public void OnViewButtonClicked()
+    public void OnMouseDown()
     {
         if (tears != null)
         {
@@ -30,6 +30,8 @@ public class art : MonoBehaviour
         {
             bookObject.SetActive(true); // 顯示書本
         }
+        //關閉畫框的碰撞器 無法再次點選
+        GetComponent<Collider2D>().enabled = false;
     }
     // Start is called before the first frame update
     void Start()
