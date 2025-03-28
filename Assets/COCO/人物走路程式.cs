@@ -44,7 +44,7 @@ public class 人物走路程式 : MonoBehaviour
         */
 
 
-        if (Input.GetKeyDown(KeyCode.C))
+        /*if (Input.GetKeyDown(KeyCode.C))
         {
             isClothed = true;
             anim.SetBool("isClothed", true);
@@ -60,7 +60,7 @@ public class 人物走路程式 : MonoBehaviour
             }
             this.enabled = false; // 關閉自己（人物走路程式）
             return;
-        }
+        }*/ /*試人物是否可以換裝用*/
 
 
 
@@ -112,4 +112,5 @@ public class 人物走路程式 : MonoBehaviour
 
         this.enabled = false; // 關閉 `人物走路程式`
     }
+   
 }
