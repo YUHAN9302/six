@@ -51,12 +51,14 @@ public class 暫停 : MonoBehaviour
 
     public void GameQuit()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(0);
+        Destroy(pauseMenu);
+        Time.timeScale = 1f;
     }
     public void second()
     {
         Time.timeScale = 1f; // 確保時間恢復正常
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(0);
     }
     public void SettingObj()
     {

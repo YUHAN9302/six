@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class 人物走路程式 : MonoBehaviour
 {
-    public Animator anim; // Animator 變數
+    private Animator animator;
     private Rigidbody2D rb; // 2D 物理剛體
     public float moveSpeed = 5f; // 移動速度
 
     public bool isClothed = false;
     public bool canMove = true; // 是否允許移動
+    private bool isWalking = false;
+    private bool isRight = true;
 
     public float minX = -12f; // 左邊界
     public float maxX = 13f;  // 右邊界
@@ -19,12 +21,11 @@ public class 人物走路程式 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        transform.position = FindObjectOfType<SaveManager>().PlayerPos;
-        anim = GetComponent<Animator>();  // 取得 Animator
-        rb = GetComponent<Rigidbody2D>(); // 取得 Rigidbody2D
 
-        anim.SetBool("isClothed", false);
+        animator = GetComponent<Animator>();
+        rb = GetComponent<Rigidbody2D>();
 
+        animator.SetBool("isClothed", false);
     }
 
     // Update is called once per frame
@@ -69,21 +70,29 @@ public class 人物走路程式 : MonoBehaviour
         // 檢測 A 或 ← 鍵移動左，D 或 → 鍵移動右
         if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
         {
+            isWalking = true;
+            isRight = false;
             moveX = moveSpeed;
-            GetComponent<SpriteRenderer>().flipX = true;
+
             // transform.rotation = Quaternion.Euler(0, 0, 0); // 角色翻轉
 
         }
         else if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
         {
+            isWalking = true;
+            isRight = true;
             moveX = -moveSpeed;
-            GetComponent<SpriteRenderer>().flipX = false;
+
 
             // transform.rotation = Quaternion.Euler(0, 180, 0); // 角色朝右
         }
         else {
-            moveX = 0;
+           
+            isWalking = false;
         }
+
+        animator.SetBool("isWalking", isWalking);
+        animator.SetBool("isRight", isRight);
 
         // 移動角色
         //rb.velocity = new Vector2(moveX, rb.velocity.y);
@@ -93,12 +102,11 @@ public class 人物走路程式 : MonoBehaviour
         float clampedX = Mathf.Clamp(transform.position.x, minX, maxX);
         transform.position = new Vector3(clampedX, transform.position.y, transform.position.z);
 
-        anim.SetBool("isWalking", moveX != 0);
     }
     public void ChangeClothes()
     {
         isClothed = true;
-        anim.SetBool("isClothed", true);
+        animator.SetBool("isClothed", true);
 
         if (ClothedScript != null)
         {

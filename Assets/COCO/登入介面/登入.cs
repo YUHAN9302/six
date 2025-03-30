@@ -38,7 +38,7 @@ public class 登入 : MonoBehaviour
     public void second()
     {
         FindObjectOfType<SaveManager>().PlayerPos = new Vector2(-7.47f, -1.08f);
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
     }
     public void SettingObj() {
         SettingObjects[0].gameObject.SetActive(true);
