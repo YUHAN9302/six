@@ -1445,8 +1445,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.0001001358, y: -0.0002501011, z: 0}
-    m_Extent: {x: 6.7209, y: 6.72075, z: 0}
+    m_Center: {x: 0.00055003166, y: -0.00014996529, z: 0}
+    m_Extent: {x: 6.7198496, y: 6.72075, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -2544,6 +2544,7 @@ GameObject:
   - component: {fileID: 546980594}
   - component: {fileID: 546980593}
   - component: {fileID: 546980595}
+  - component: {fileID: 546980596}
   m_Layer: 5
   m_Name: "\u9EDE\u881F\u71ED\u5B58\u6A94\u6FFE\u93E1"
   m_TagString: Untagged
@@ -2629,6 +2630,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &546980596
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 546980591}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d46c275a4d56e8a44b49b96a0e0d0379, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &622643813
 GameObject:
   m_ObjectHideFlags: 0
@@ -4714,8 +4727,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.00029993057, y: -0.000099897385, z: 0}
-    m_Extent: {x: 6.7202, y: 6.7204, z: 0}
+    m_Center: {x: 0.0000500679, y: -0.00034999847, z: 0}
+    m_Extent: {x: 6.72075, y: 6.72055, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -6382,8 +6395,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.00064992905, y: 0.00069999695, z: 0}
-    m_Extent: {x: 5.94035, y: 5.94, z: 0}
+    m_Center: {x: 0.00020003319, y: -0.00014996529, z: 0}
+    m_Extent: {x: 5.9399996, y: 5.9403496, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
