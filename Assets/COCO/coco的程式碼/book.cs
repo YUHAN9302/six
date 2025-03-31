@@ -2,53 +2,46 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class book : MonoBehaviour
+public class Book : MonoBehaviour
 {
-    public GameObject bookAnimation; // 書本動畫的 GameObject
-    private bool isPlaying = false;  // 記錄動畫是否正在顯示
-    private Animator animator;
+    public GameObject bookAnimation;  // 書本動畫的 GameObject
+    private bool animationPlayed = false;  // 動畫是否播放過
+
+
 
     // Start is called before the first frame update
     void Start()
     {
         if (bookAnimation != null)
         {
-            animator = bookAnimation.GetComponent<Animator>();
+            bookAnimation.SetActive(false); // 確保動畫物件一開始是隱藏的
         }
     }
 
-    void OnMouseDown()
+    public void OnMouseDown()
     {
-        // 如果點擊的是書本物件
-        if (!isPlaying && bookAnimation != null)
+        if (!bookAnimation.activeSelf)
         {
-            bookAnimation.SetActive(true); // 顯示並播放動畫
-            isPlaying = true;
+            bookAnimation.SetActive(true);  // 顯示書本動畫
+            StartCoroutine(HideAfterSeconds(2f));  // 等待 2秒後隱藏
+        }
 
-            // 等待動畫播放完成
-            StartCoroutine(WaitForAnimation());
-        }
-        // 如果點擊的是動畫物件，並且動畫已經播放完
-        else if (isPlaying && bookAnimation != null)
-        {
-            bookAnimation.SetActive(false); // 隱藏動畫物件
-            isPlaying = false;
-        }
     }
-    private IEnumerator WaitForAnimation()
+
+
+    private IEnumerator HideAfterSeconds(float seconds)
     {
-        Animator animator = bookAnimation.GetComponent<Animator>();
-        if (animator != null)
-        {
-            yield return new WaitForSeconds(animator.GetCurrentAnimatorStateInfo(0).length); // 等待動畫播完
-        }
-        isPlaying = false; // 允許再次點擊來關閉動畫
-        
+        yield return new WaitForSeconds(seconds);  // 等待指定時間
+        bookAnimation.SetActive(false);  // 隱藏動畫物件
+        gameObject.SetActive(false);     // 隱藏書本物件
     }
+
+   
+
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }
