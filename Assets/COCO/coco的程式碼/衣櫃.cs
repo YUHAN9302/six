@@ -10,6 +10,9 @@ public class 衣櫃 : MonoBehaviour
     public float closeEyeDuration = 1.5f; // 閉眼動畫總時長
     private bool hasChangedClothes = false; // 是否已經換過裝
 
+    public GameObject changeClothesSoundObject; // 換衣音效物件
+
+
     private void Start()
     {
         if (player != null)
@@ -53,6 +56,16 @@ public class 衣櫃 : MonoBehaviour
             closeEyeAnimation.SetActive(true); // 顯示閉眼動畫
         }
 
+        if (changeClothesSoundObject != null)
+        {
+            changeClothesSoundObject.SetActive(true); // 顯示音效物件
+            AudioSource audioSource = changeClothesSoundObject.GetComponent<AudioSource>();
+            if (audioSource != null)
+            {
+                audioSource.Play(); // 播放換衣音效
+            }
+        }
+
         float halfDuration = closeEyeDuration / 2f; // 計算動畫的一半時間
         yield return new WaitForSeconds(halfDuration); // 先等待一半時間
 
@@ -68,5 +81,16 @@ public class 衣櫃 : MonoBehaviour
         }
 
         Debug.Log("閉眼動畫結束，角色睜眼！");
+
+        if (changeClothesSoundObject != null)
+        {
+            // 等待音效播放完成後銷毀物件
+            AudioSource audioSource = changeClothesSoundObject.GetComponent<AudioSource>();
+            if (audioSource != null)
+            {
+                yield return new WaitForSeconds(audioSource.clip.length); // 根據音效長度等待
+                Destroy(changeClothesSoundObject); // 銷毀音效物件
+            }
+        }
     }
 }
