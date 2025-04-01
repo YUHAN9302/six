@@ -7,6 +7,8 @@ public class art : MonoBehaviour
     public GameObject tears;  // 眼淚動畫的 GameObject
     public GameObject bookObject; // 書本物件
 
+    public GameObject 特寫黑框;
+
     public GameObject bookSoundObject; // 包含書本掉落音效的 GameObject
     public float soundDuration = 2f;  // 設定音效播放時長
 
@@ -17,6 +19,7 @@ public class art : MonoBehaviour
         {
             tears.SetActive(true);  // 顯示眼淚動畫
             StartCoroutine(HideTearsAndShowBook());
+            特寫黑框.SetActive(true);
         }
     }
 
@@ -27,6 +30,7 @@ public class art : MonoBehaviour
         if (tears != null)
         {
             tears.SetActive(false); // 隱藏眼淚動畫
+            特寫黑框.SetActive(false);
         }
 
         if (bookObject != null)
