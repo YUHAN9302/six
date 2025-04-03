@@ -8,7 +8,12 @@ public class 開場 : MonoBehaviour
     public GameObject eyeCloseObject; // 閉眼動畫的 Animator
     public GameObject dialogBox;
 
-    
+    public GameObject blanketSoundObject; // 棉被音效物件
+    private bool blanketSoundPlayed = false;
+    private AudioSource blanketAudioSource; // 音效的 AudioSource
+
+
+
     private void StartSequence()
     {
         blackScreen.SetActive(false); // 隱藏黑幕
@@ -29,14 +34,35 @@ public class 開場 : MonoBehaviour
     void Start()
     {
         blackScreen.SetActive(true);
+
+        if (blanketSoundObject != null)
+        {
+            blanketAudioSource = blanketSoundObject.GetComponent<AudioSource>();
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (!dialogBox.activeSelf)
+        if (!dialogBox.activeSelf && !blanketSoundPlayed)
         {
-            StartSequence();
+            StartCoroutine(PlayBlanketSoundAndStartSequence());
+            blanketSoundPlayed = true;
         }
+    }
+    private IEnumerator PlayBlanketSoundAndStartSequence()
+    {
+        if (blanketSoundObject != null)
+        {
+            blanketSoundObject.SetActive(true);
+            if (blanketAudioSource != null)
+            {
+                blanketAudioSource.Play();
+                yield return new WaitForSeconds(blanketAudioSource.clip.length); // 等待音效播放完成
+            }
+            blanketSoundObject.SetActive(false);
+        }
+
+        StartSequence();
     }
 }

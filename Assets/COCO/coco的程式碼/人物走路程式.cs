@@ -6,7 +6,7 @@ public class 人物走路程式 : MonoBehaviour
 {
     private Animator animator;
     private Rigidbody2D rb; // 2D 物理剛體
-    public float moveSpeed = 6f; // 移動速度
+    public float moveSpeed = 8f; // 移動速度
 
     public bool isClothed = false;
     public bool canMove = true; // 是否允許移動
