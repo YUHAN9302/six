@@ -1349,6 +1349,7 @@ GameObject:
   - component: {fileID: 891405168832999637}
   - component: {fileID: 346689972049094469}
   - component: {fileID: 3227639711394698787}
+  - component: {fileID: 4230512533915179246}
   m_Layer: 5
   m_Name: "Canvas_\u8A2D\u5B9A\u4ECB\u9762"
   m_TagString: Untagged
@@ -1470,6 +1471,19 @@ MonoBehaviour:
   ScreenDropdown: {fileID: 8745866940685071934}
   urpAsset: {fileID: 11400000, guid: a14caed9466f3254a8be05fda3915300, type: 2}
   RatioDropdown: {fileID: 397329835463306738}
+--- !u!114 &4230512533915179246
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3537745042164110291}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0eeb31377541a544cb985517fd5d3934, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Obj: []
 --- !u!1 &3589897140466843857
 GameObject:
   m_ObjectHideFlags: 0

@@ -13,7 +13,10 @@ public class 開場 : MonoBehaviour
     private AudioSource blanketAudioSource; // 音效的 AudioSource
 
 
-
+    private void Awake()
+    {
+        dialogBox.SetActive(true);
+    }
     private void StartSequence()
     {
         blackScreen.SetActive(false); // 隱藏黑幕

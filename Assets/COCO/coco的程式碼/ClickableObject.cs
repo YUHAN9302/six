@@ -17,19 +17,15 @@ public class ClickableObject : MonoBehaviour
     }
     private void Update()
     {
-        if (!¼È°±.isClickPause && !Setting.isClickSetting)
-        {
-            GetComponent<Collider2D>().enabled = true;
-        }
-        else {
-            GetComponent<Collider2D>().enabled = false;
-        }
+      
     }
     private void OnMouseDown()
     {
-        if (TriggerManager.Instance != null)
-        {
-            TriggerManager.Instance.RecordClick(gameObject.name);
-        }
+        
+            if (TriggerManager.Instance != null)
+            {
+                TriggerManager.Instance.RecordClick(gameObject.name);
+            }
+        
     }
 }

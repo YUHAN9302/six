@@ -8,10 +8,22 @@ using System;
 public class SetAndGetSaveData : MonoBehaviour
 {
     public TextMeshProUGUI[] Texts;
+    static public bool isClickLaodPage;
+
     private void Awake()
     {
         if(Application.loadedLevelName== "¶}©l¤¶­±")
         DontDestroyOnLoad(gameObject);
+
+    }
+    private void OnEnable()
+    {
+        isClickLaodPage = true;
+
+    }
+    private void OnDisable()
+    {
+        isClickLaodPage = false;
 
     }
     // Start is called before the first frame update

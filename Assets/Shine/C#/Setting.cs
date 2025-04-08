@@ -14,7 +14,6 @@ public class Setting : MonoBehaviour
     public TMP_Dropdown ScreenDropdown;
     public UniversalRenderPipelineAsset urpAsset;
     public TMP_Dropdown RatioDropdown;
-    static public bool isClickSetting;
 
     // Start is called before the first frame update
     void Awake()
@@ -22,11 +21,10 @@ public class Setting : MonoBehaviour
         DontDestroyOnLoad(gameObject);
         urpAsset.renderScale = 2f;
     }
-
+   
     // Update is called once per frame
     void Update()
     {
-        isClickSetting = gameObject.active;
 
     }
     public void ChangeBGMSlider()

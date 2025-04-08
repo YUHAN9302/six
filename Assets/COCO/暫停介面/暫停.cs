@@ -11,7 +11,6 @@ public class 暫停 : MonoBehaviour
     private 人物走路程式 playerMovement;
     Setting[] SettingObjects;
     SetAndGetSaveData[] LoadObjects;
-    static public bool isClickPause;
 
     // Start is called before the first frame update
     void Start()
@@ -26,7 +25,6 @@ public class 暫停 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        isClickPause = gameObject.active;
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
@@ -40,12 +38,14 @@ public class 暫停 : MonoBehaviour
 
         if (isPaused)
         {
+
             Time.timeScale = 0f; // 暫停遊戲
             if (playerMovement != null)
                 playerMovement.canMove = false; // 停止角色移動
         }
         else
         {
+
             Time.timeScale = 1f; // 恢復遊戲
             if (playerMovement != null)
                 playerMovement.canMove = true; // 恢復角色移動
