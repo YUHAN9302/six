@@ -15,7 +15,16 @@ public class ClickableObject : MonoBehaviour
             Debug.LogError("TriggerManager not found! Make sure 'TriggerManager' GameObject exists in the scene.");
         }
     }
-
+    private void Update()
+    {
+        if (!¼È°±.isClickPause && !Setting.isClickSetting)
+        {
+            GetComponent<Collider2D>().enabled = true;
+        }
+        else {
+            GetComponent<Collider2D>().enabled = false;
+        }
+    }
     private void OnMouseDown()
     {
         if (TriggerManager.Instance != null)

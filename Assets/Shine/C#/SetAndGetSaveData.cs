@@ -10,6 +10,7 @@ public class SetAndGetSaveData : MonoBehaviour
     public TextMeshProUGUI[] Texts;
     private void Awake()
     {
+        if(Application.loadedLevelName== "¶}©l¤¶­±")
         DontDestroyOnLoad(gameObject);
 
     }

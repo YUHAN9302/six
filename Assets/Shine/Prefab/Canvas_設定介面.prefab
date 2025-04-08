@@ -762,7 +762,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u9AD8"
+  m_text: High
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1468,6 +1468,8 @@ MonoBehaviour:
   SFXSlider: {fileID: 2961984362855436049}
   AudioMixerObj: {fileID: 24100000, guid: 2ab89238fb119a8428c4084b37636bd2, type: 2}
   ScreenDropdown: {fileID: 8745866940685071934}
+  urpAsset: {fileID: 11400000, guid: a14caed9466f3254a8be05fda3915300, type: 2}
+  RatioDropdown: {fileID: 397329835463306738}
 --- !u!1 &3589897140466843857
 GameObject:
   m_ObjectHideFlags: 0
@@ -2835,15 +2837,27 @@ MonoBehaviour:
   m_Value: 0
   m_Options:
     m_Options:
-    - m_Text: "\u9AD8"
+    - m_Text: High
       m_Image: {fileID: 0}
-    - m_Text: "\u4E2D"
+    - m_Text: Medium
       m_Image: {fileID: 0}
-    - m_Text: "\u4F4E"
+    - m_Text: Low
       m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3227639711394698787}
+        m_TargetAssemblyTypeName: Setting, Assembly-CSharp
+        m_MethodName: SetRenderRatio
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_AlphaFadeSpeed: 0.15
 --- !u!1 &5328440883946178713
 GameObject:
