@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class ClickableObject : MonoBehaviour
 {
+    [Header("如果有對話就打勾")]
+    public bool isDialogue;
+    [Header("對話物件")]
+    public GameObject DialogueObj;
     private void Start()
     {
         if (TriggerManager.Instance != null)
@@ -26,6 +30,10 @@ public class ClickableObject : MonoBehaviour
             {
                 TriggerManager.Instance.RecordClick(gameObject.name);
             }
+        if (isDialogue) {
+            DialogueObj.SetActive(isDialogue);
+            DialogueObj.GetComponent<DialogueUI>().Reset();
+        }
         
     }
 }

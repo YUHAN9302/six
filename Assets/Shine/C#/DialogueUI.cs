@@ -9,8 +9,9 @@ public class DialogueUI : MonoBehaviour
     public Text contentText;
     public Button nextButton;
 
-    private int currentLine = 0;
-
+    public int currentLine = 0;
+    [Header("對話結束 一同要關閉的物件")]
+    public GameObject CloseObj;
     void Start()
     {
         dialogueManager = this.GetComponent<DialogueManager>();
@@ -30,6 +31,15 @@ public class DialogueUI : MonoBehaviour
         else
         {
            gameObject.SetActive(false);
+            if(CloseObj!=null)
+            CloseObj.SetActive(false);
         }
+    }
+    public void Reset()
+    {
+        currentLine = 0;
+        var line = dialogueManager.dialogueLines[currentLine];
+        speakerText.text = line.speaker;
+        contentText.text = line.content;
     }
 }
