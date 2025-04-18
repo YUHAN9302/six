@@ -12,7 +12,7 @@ public class BookAnimation : MonoBehaviour
         {
             // 隱藏書本物件和動畫物件
             bookScript.gameObject.SetActive(false);  // 隱藏書本物件
-            bookScript.bookAnimation.SetActive(false);  // 隱藏動畫物件
+            bookScript.bookAnimation.SetActive(true);  // 隱藏動畫物件
         }
     }
 

@@ -33,7 +33,7 @@ public class Book : MonoBehaviour
     private IEnumerator HideAfterSeconds(float seconds)
     {
         yield return new WaitForSeconds(seconds);  // 等待指定時間
-        bookAnimation.SetActive(false);  // 隱藏動畫物件
+        bookAnimation.SetActive(true);  // 隱藏動畫物件
         gameObject.SetActive(false);     // 隱藏書本物件
     }
 

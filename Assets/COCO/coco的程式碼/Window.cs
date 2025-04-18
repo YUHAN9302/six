@@ -24,12 +24,7 @@ public class Window : MonoBehaviour
         }
 
     }
-    private IEnumerator HideAfterSeconds(float seconds)
-    {
-        yield return new WaitForSeconds(seconds);  // 等待指定時間
-        windowAnimation.SetActive(false);  // 隱藏動畫物件
-
-    }
+   
     // Update is called once per frame
     void Update()
     {
