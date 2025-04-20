@@ -20,6 +20,7 @@ public class art : MonoBehaviour
             tears.SetActive(true);  // 顯示眼淚動畫
             StartCoroutine(HideTearsAndShowBook());
             特寫黑框.SetActive(true);
+
         }
     }
 
@@ -54,6 +55,8 @@ public class art : MonoBehaviour
         }
 
         GetComponent<Collider2D>().enabled = false;
+        Destroy(this);
+
     }
     // Start is called before the first frame update
     void Start()

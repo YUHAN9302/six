@@ -38,8 +38,13 @@ public class DialogueUI : MonoBehaviour
     public void Reset()
     {
         currentLine = 0;
-        var line = dialogueManager.dialogueLines[currentLine];
-        speakerText.text = line.speaker;
-        contentText.text = line.content;
+
+        if (dialogueManager.dialogueLines.Count > 0)
+        {
+            var line = dialogueManager.dialogueLines[currentLine];
+            speakerText.text = line.speaker;
+            contentText.text = line.content;
+        }
+
     }
 }

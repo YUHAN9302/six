@@ -92,5 +92,7 @@ public class 衣櫃 : MonoBehaviour
                 Destroy(changeClothesSoundObject); // 銷毀音效物件
             }
         }
+        Destroy(this);
+
     }
 }

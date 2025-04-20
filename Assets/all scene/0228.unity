@@ -1761,6 +1761,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isDialogue: 1
   DialogueObj: {fileID: 1693352381}
+  isLoop: 0
 --- !u!1 &265414003
 GameObject:
   m_ObjectHideFlags: 0
@@ -1812,8 +1813,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.00060009956, y: 0.00019979477, z: 0}
-    m_Extent: {x: 6.7204, y: 6.7205, z: 0}
+    m_Center: {x: -0.000049829483, y: -0.00034999847, z: 0}
+    m_Extent: {x: 6.7199497, y: 6.72035, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -2502,7 +2503,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.010025, y: -0.000030518}
+  m_AnchoredPosition: {x: 39.59, y: -43.91}
   m_SizeDelta: {x: 1920, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &411383383
@@ -4616,19 +4617,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 682732750}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1989133865}
-        m_TargetAssemblyTypeName: art, Assembly-CSharp
-        m_MethodName: OnViewButtonClicked
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &682732750
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4678,7 +4667,6 @@ GameObject:
   - component: {fileID: 706972739}
   - component: {fileID: 706972743}
   - component: {fileID: 706972742}
-  - component: {fileID: 706972741}
   - component: {fileID: 706972740}
   - component: {fileID: 706972744}
   - component: {fileID: 706972745}
@@ -4721,51 +4709,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31b2671aeb7bf69468a6bee4b1df7198, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!61 &706972741
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 706972738}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1920, y: 1080}
-  m_EdgeRadius: 0
 --- !u!114 &706972742
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4969,7 +4912,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &720312015
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5142,7 +5085,6 @@ GameObject:
   m_Component:
   - component: {fileID: 756603100}
   - component: {fileID: 756603101}
-  - component: {fileID: 756603102}
   m_Layer: 0
   m_Name: Square
   m_TagString: Untagged
@@ -5218,41 +5160,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!58 &756603102
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 756603099}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.0000009536743}
-  serializedVersion: 2
-  m_Radius: 3.54
 --- !u!1 &758472300
 GameObject:
   m_ObjectHideFlags: 0
@@ -7489,8 +7396,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.0000500679, y: -0.00040006638, z: 0}
-    m_Extent: {x: 6.72095, y: 6.7202, z: 0}
+    m_Center: {x: -0.000099897385, y: 0.00045013428, z: 0}
+    m_Extent: {x: 6.7206, y: 6.71985, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -7983,7 +7890,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 3.28}
+  m_Offset: {x: -0.26582527, y: 0.6882148}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -7994,7 +7901,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.87, y: 2.84}
+  m_Size: {x: 9.781431, y: 15.200826}
   m_EdgeRadius: 0
 --- !u!114 &1198570661
 MonoBehaviour:
@@ -8010,6 +7917,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isDialogue: 1
   DialogueObj: {fileID: 25075056}
+  isLoop: 0
 --- !u!1 &1220908049
 GameObject:
   m_ObjectHideFlags: 0
@@ -8124,7 +8032,6 @@ GameObject:
   - component: {fileID: 1225623058}
   - component: {fileID: 1225623057}
   - component: {fileID: 1225623059}
-  - component: {fileID: 1225623060}
   - component: {fileID: 1225623061}
   - component: {fileID: 1225623062}
   - component: {fileID: 1225623063}
@@ -8215,51 +8122,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!61 &1225623060
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1225623054}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1920, y: 1080}
-  m_EdgeRadius: 0
 --- !u!114 &1225623061
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9515,7 +9377,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1352018249
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9681,19 +9543,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1380444666}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1989133865}
-        m_TargetAssemblyTypeName: art, Assembly-CSharp
-        m_MethodName: OnViewButtonClicked
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1380444666
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10062,6 +9912,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isDialogue: 1
   DialogueObj: {fileID: 452552309}
+  isLoop: 0
 --- !u!1 &1441590036
 GameObject:
   m_ObjectHideFlags: 0
@@ -10266,8 +10117,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.00064992905, y: -0.00029993057, z: 0}
-    m_Extent: {x: 5.94035, y: 5.9399, z: 0}
+    m_Center: {x: 0.00055003166, y: 0.0005002022, z: 0}
+    m_Extent: {x: 5.9402504, y: 5.9403, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -13181,7 +13032,6 @@ GameObject:
   - component: {fileID: 1743999002}
   - component: {fileID: 1743999006}
   - component: {fileID: 1743999005}
-  - component: {fileID: 1743999004}
   - component: {fileID: 1743999003}
   - component: {fileID: 1743999007}
   - component: {fileID: 1743999009}
@@ -13233,51 +13083,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!61 &1743999004
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1743999001}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1920, y: 1080}
-  m_EdgeRadius: 0
 --- !u!114 &1743999005
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13823,6 +13628,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isDialogue: 1
   DialogueObj: {fileID: 1580659388}
+  isLoop: 0
 --- !u!1 &1787443529
 GameObject:
   m_ObjectHideFlags: 0
@@ -15696,7 +15502,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.45}
+  m_Offset: {x: -0.15849638, y: -0.14436173}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -15707,7 +15513,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.81, y: 2.87}
+  m_Size: {x: 6.6931744, y: 9.051376}
   m_EdgeRadius: 0
 --- !u!114 &1989133864
 MonoBehaviour:
@@ -15752,6 +15558,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isDialogue: 1
   DialogueObj: {fileID: 1765092041}
+  isLoop: 0
 --- !u!1 &2007021795
 GameObject:
   m_ObjectHideFlags: 0
@@ -15920,7 +15727,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2036960898
 RectTransform:
   m_ObjectHideFlags: 0
@@ -15984,19 +15791,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2036960900}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1989133865}
-        m_TargetAssemblyTypeName: art, Assembly-CSharp
-        m_MethodName: OnViewButtonClicked
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &2036960900
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16516,7 +16311,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.54, y: -0}
+  m_Offset: {x: -0.31471682, y: -0.5414028}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -16527,7 +16322,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.91, y: 2.8}
+  m_Size: {x: 7.0938244, y: 13.022856}
   m_EdgeRadius: 0
 --- !u!114 &2106874538
 MonoBehaviour:
@@ -16571,6 +16366,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isDialogue: 0
   DialogueObj: {fileID: 0}
+  isLoop: 0
 --- !u!1 &2108504110
 GameObject:
   m_ObjectHideFlags: 0

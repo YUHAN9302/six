@@ -10,6 +10,8 @@ public class Photo : MonoBehaviour
     void OnMouseUp()
     {
         bigPhoto.SetActive(true); // 顯示相框特寫
+        Destroy(this);
+
     }
 
     // Start is called before the first frame update

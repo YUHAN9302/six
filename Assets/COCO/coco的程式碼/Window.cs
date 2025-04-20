@@ -21,6 +21,7 @@ public class Window : MonoBehaviour
         {
             windowAnimation.SetActive(true);  // 顯示書本動畫
 
+            Destroy(this);
         }
 
     }
