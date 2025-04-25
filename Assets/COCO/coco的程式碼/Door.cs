@@ -9,6 +9,8 @@ public class Door : MonoBehaviour
     private bool isOpen = false;
 
     public GameObject closeEyesAnimationObject;
+    public GameObject CloseDoorDialogueUI;
+    public GameObject OpenDoorDialogueUI;
 
     private void OnMouseDown()
     {
@@ -17,10 +19,14 @@ public class Door : MonoBehaviour
         if (TriggerManager.Instance != null && TriggerManager.Instance.AreAllClicked())
         {
             OpenDoor();
+            OpenDoorDialogueUI.SetActive(true);
+
         }
         else
         {
             PlayLockedSound();
+            CloseDoorDialogueUI.SetActive(true);
+
         }
     }
 
@@ -55,6 +61,7 @@ public class Door : MonoBehaviour
     IEnumerator PlaySoundAndHide(GameObject soundObject)
     {
         soundObject.SetActive(true);
+
         AudioSource audioSource = soundObject.GetComponent<AudioSource>();
 
         if (audioSource != null)
