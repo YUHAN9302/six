@@ -5,7 +5,7 @@ using UnityEngine;
 public class OpenItemBox : MonoBehaviour
 {
     public GameObject[] itemImages;           // 5 個圖片欄位
-
+    public GameObject[] itemInfo;
     public void OnEnable()
     {
         if (SetAndGetSaveData.SelectID == 0)
@@ -35,6 +35,12 @@ public class OpenItemBox : MonoBehaviour
                     itemImages[i].transform.GetChild(0).gameObject.SetActive(false);
                 }
             }
+        }
+    }
+    public void OpenItemInfo(int ID) {
+        if (itemImages[ID].transform.GetChild(0).gameObject.active)
+        {
+            itemInfo[ID].SetActive(true);
         }
     }
 
