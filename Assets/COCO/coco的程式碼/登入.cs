@@ -44,8 +44,8 @@ public class 登入 : MonoBehaviour
     }
     public void second()
     {
-       
 
+        SetAndGetSaveData.SelectID = 0;
         StartCoroutine(PlayAnimationAndLoadScene());
 
     }

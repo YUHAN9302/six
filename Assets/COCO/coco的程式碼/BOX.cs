@@ -10,6 +10,7 @@ public class BOX : MonoBehaviour
 
     private bool isBoxOpen = false;
     private bool isAnimating = false;
+    public GameObject ItemSlots;
 
     // Start is called before the first frame update
     private void Start()
@@ -51,6 +52,13 @@ public class BOX : MonoBehaviour
         }
 
         yield return new WaitForSeconds(stateInfo.length);
+        if (stateName == "OpenBox") {
+            ItemSlots.SetActive(true);
+        }
+        else {
+            ItemSlots.SetActive(false);
+
+        }
         isAnimating = false;
     }
     // Update is called once per frame

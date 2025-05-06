@@ -16,6 +16,8 @@ public class Book : MonoBehaviour
         {
             bookAnimation.SetActive(false); // 確保動畫物件一開始是隱藏的
         }
+       FindObjectOfType<SetAndGetSaveData>().SaveData(1, "書本");
+
     }
 
     public void OnMouseUp()
