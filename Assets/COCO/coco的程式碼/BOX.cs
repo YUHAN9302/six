@@ -12,6 +12,7 @@ public class BOX : MonoBehaviour
     private bool isAnimating = false;
     public GameObject ItemSlots;
     public GameObject boxSoundObject;
+    public GameObject boxCloseSoundObject;
 
     // Start is called before the first frame update
     private void Start()
@@ -38,6 +39,8 @@ public class BOX : MonoBehaviour
             boxAnimator.ResetTrigger("OpenBox");
             boxAnimator.SetTrigger("CloseBox");
             StartCoroutine(WaitForAnimation("CloseBox"));
+
+            StartCoroutine(PlaySoundAndHide(boxCloseSoundObject));
         }
 
         isBoxOpen = !isBoxOpen;
