@@ -11,6 +11,7 @@ public class BOX : MonoBehaviour
     private bool isBoxOpen = false;
     private bool isAnimating = false;
     public GameObject ItemSlots;
+    public GameObject boxSoundObject;
 
     // Start is called before the first frame update
     private void Start()
@@ -29,6 +30,8 @@ public class BOX : MonoBehaviour
             boxAnimator.ResetTrigger("CloseBox");
             boxAnimator.SetTrigger("OpenBox");
             StartCoroutine(WaitForAnimation("OpenBox"));
+
+            StartCoroutine(PlaySoundAndHide(boxSoundObject));
         }
         else
         {
@@ -60,6 +63,22 @@ public class BOX : MonoBehaviour
 
         }
         isAnimating = false;
+    }
+
+    IEnumerator PlaySoundAndHide(GameObject soundObject)
+    {
+        soundObject.SetActive(true);
+        AudioSource audio = soundObject.GetComponent<AudioSource>();
+
+        if (audio != null)
+        {
+            audio.Play();
+
+            // 等待音效播放完成
+            yield return new WaitForSeconds(audio.clip.length);
+        }
+
+        soundObject.SetActive(false); // 播放完畢後隱藏
     }
     // Update is called once per frame
     void Update()
