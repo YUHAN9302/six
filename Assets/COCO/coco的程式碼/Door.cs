@@ -50,7 +50,7 @@ public class Door : MonoBehaviour
         }
         Debug.Log("Door is now open!");
 
-        StartCoroutine(LoadNextSceneAfterDelay(2f));
+
     }
 
     void PlayLockedSound()
@@ -81,5 +81,12 @@ public class Door : MonoBehaviour
         yield return new WaitForSeconds(delay);
         SceneManager.LoadScene("第二章節"); // 確保這個場景名稱正確且已加入 Build Settings
     }
-
+    public void OnCloseOpenDoorDialogue()
+    {
+        if (OpenDoorDialogueUI != null)
+        {
+            OpenDoorDialogueUI.SetActive(false);
+            StartCoroutine(LoadNextSceneAfterDelay(0.5f));
+        }
+    }
 }
