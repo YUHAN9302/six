@@ -79,7 +79,7 @@ public class Door : MonoBehaviour
     IEnumerator LoadNextSceneAfterDelay(float delay)
     {
         yield return new WaitForSeconds(delay);
-        SceneManager.LoadScene("第二章節"); // 確保這個場景名稱正確且已加入 Build Settings
+        SceneManager.LoadScene("走廊2F"); // 確保這個場景名稱正確且已加入 Build Settings
     }
     public void OnCloseOpenDoorDialogue()
     {
