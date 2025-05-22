@@ -421,6 +421,7 @@ GameObject:
   - component: {fileID: 25075059}
   - component: {fileID: 25075058}
   - component: {fileID: 25075062}
+  - component: {fileID: 25075063}
   m_Layer: 5
   m_Name: "\u5C0D\u8A71\u6846-\u7A97\u6236\u5C0D\u8A71"
   m_TagString: Untagged
@@ -518,7 +519,7 @@ AudioSource:
   m_GameObject: {fileID: 25075056}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -1405929886273488059, guid: 2ab89238fb119a8428c4084b37636bd2, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -605,6 +606,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &25075063
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 25075056}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd628b1343984a74b83f0a4f7fd6f87a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scriptsToDisable:
+  - {fileID: 1303272041}
 --- !u!1 &37703445
 GameObject:
   m_ObjectHideFlags: 0
@@ -1083,6 +1098,7 @@ GameObject:
   - component: {fileID: 84608155}
   - component: {fileID: 84608154}
   - component: {fileID: 84608158}
+  - component: {fileID: 84608159}
   m_Layer: 5
   m_Name: "\u5C0D\u8A71\u6846-\u958B\u9580\u5C0D\u8A71"
   m_TagString: Untagged
@@ -1180,7 +1196,7 @@ AudioSource:
   m_GameObject: {fileID: 84608152}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -1405929886273488059, guid: 2ab89238fb119a8428c4084b37636bd2, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -1267,6 +1283,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &84608159
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 84608152}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd628b1343984a74b83f0a4f7fd6f87a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scriptsToDisable:
+  - {fileID: 1303272041}
 --- !u!1 &100705918
 GameObject:
   m_ObjectHideFlags: 0
@@ -2531,6 +2561,7 @@ GameObject:
   - component: {fileID: 244912714}
   - component: {fileID: 244912713}
   - component: {fileID: 244912717}
+  - component: {fileID: 244912718}
   m_Layer: 5
   m_Name: "\u5C0D\u8A71\u6846-\u672A\u958B\u9580\u5C0D\u8A71"
   m_TagString: Untagged
@@ -2628,7 +2659,7 @@ AudioSource:
   m_GameObject: {fileID: 244912711}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -1405929886273488059, guid: 2ab89238fb119a8428c4084b37636bd2, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -2715,6 +2746,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &244912718
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 244912711}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd628b1343984a74b83f0a4f7fd6f87a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scriptsToDisable:
+  - {fileID: 1303272041}
 --- !u!1 &244926233
 GameObject:
   m_ObjectHideFlags: 0
@@ -3054,8 +3099,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.00034999847, y: -0.00034999847, z: 0}
-    m_Extent: {x: 6.72055, y: 6.72015, z: 0}
+    m_Center: {x: -0.000300169, y: 0.00014996529, z: 0}
+    m_Extent: {x: 6.7202997, y: 6.72075, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -4032,6 +4077,7 @@ GameObject:
   - component: {fileID: 452552311}
   - component: {fileID: 452552310}
   - component: {fileID: 452552315}
+  - component: {fileID: 452552316}
   m_Layer: 5
   m_Name: "\u5C0D\u8A71\u6846-\u65E5\u8A18\u5C0D\u8A71"
   m_TagString: Untagged
@@ -4129,7 +4175,7 @@ AudioSource:
   m_GameObject: {fileID: 452552309}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -1405929886273488059, guid: 2ab89238fb119a8428c4084b37636bd2, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -4216,6 +4262,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &452552316
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 452552309}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd628b1343984a74b83f0a4f7fd6f87a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scriptsToDisable:
+  - {fileID: 1303272041}
 --- !u!1 &460942934
 GameObject:
   m_ObjectHideFlags: 0
@@ -5475,6 +5535,7 @@ GameObject:
   - component: {fileID: 546980595}
   - component: {fileID: 546980596}
   - component: {fileID: 546980597}
+  - component: {fileID: 546980598}
   m_Layer: 5
   m_Name: "\u9EDE\u881F\u71ED\u5B58\u6A94\u6FFE\u93E1"
   m_TagString: Untagged
@@ -5591,6 +5652,20 @@ MonoBehaviour:
   - {fileID: 261396330}
   - {fileID: 2106874534}
   - {fileID: 1428587737}
+--- !u!114 &546980598
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 546980591}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd628b1343984a74b83f0a4f7fd6f87a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scriptsToDisable:
+  - {fileID: 1303272041}
 --- !u!1 &569384089
 GameObject:
   m_ObjectHideFlags: 0
@@ -6618,12 +6693,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemImages:
   - {fileID: 1146121626}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   - {fileID: 244882715}
   - {fileID: 586414252}
+  - {fileID: 2011086583}
+  - {fileID: 117879626}
+  - {fileID: 1004976920}
+  - {fileID: 194261573}
   itemInfo:
   - {fileID: 1621323225}
 --- !u!1 &670072969
@@ -6911,6 +6986,7 @@ GameObject:
   - component: {fileID: 706972740}
   - component: {fileID: 706972744}
   - component: {fileID: 706972745}
+  - component: {fileID: 706972746}
   m_Layer: 5
   m_Name: photo
   m_TagString: Untagged
@@ -7051,6 +7127,20 @@ MonoBehaviour:
   - {fileID: 261396330}
   - {fileID: 2106874534}
   - {fileID: 1428587737}
+--- !u!114 &706972746
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 706972738}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd628b1343984a74b83f0a4f7fd6f87a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scriptsToDisable:
+  - {fileID: 1303272041}
 --- !u!1 &707257471
 GameObject:
   m_ObjectHideFlags: 0
@@ -10672,8 +10762,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.00029993057, y: -0.00014996529, z: 0}
-    m_Extent: {x: 6.7206, y: 6.7204504, z: 0}
+    m_Center: {x: -0.00055003166, y: 0.00014996529, z: 0}
+    m_Extent: {x: 6.7204504, y: 6.7206497, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -11642,6 +11732,7 @@ GameObject:
   - component: {fileID: 1225623062}
   - component: {fileID: 1225623063}
   - component: {fileID: 1225623064}
+  - component: {fileID: 1225623065}
   m_Layer: 5
   m_Name: book
   m_TagString: Untagged
@@ -11900,6 +11991,20 @@ MonoBehaviour:
   - {fileID: 261396330}
   - {fileID: 2106874534}
   - {fileID: 1428587737}
+--- !u!114 &1225623065
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1225623054}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd628b1343984a74b83f0a4f7fd6f87a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scriptsToDisable:
+  - {fileID: 1303272041}
 --- !u!1 &1229570661
 GameObject:
   m_ObjectHideFlags: 0
@@ -14203,8 +14308,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.000049829483, y: 0.00029993057, z: 0}
-    m_Extent: {x: 5.9401503, y: 5.9403, z: 0}
+    m_Center: {x: -0.00059986115, y: -0.00020003319, z: 0}
+    m_Extent: {x: 5.9403, y: 5.9406996, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -14817,6 +14922,7 @@ GameObject:
   - component: {fileID: 1512057966}
   - component: {fileID: 1512057968}
   - component: {fileID: 1512057969}
+  - component: {fileID: 1512057970}
   m_Layer: 5
   m_Name: "\u5C0D\u8A71\u6846-\u958B\u5834\u5C0D\u8A71"
   m_TagString: Untagged
@@ -14915,7 +15021,7 @@ AudioSource:
   m_GameObject: {fileID: 1512057962}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -1405929886273488059, guid: 2ab89238fb119a8428c4084b37636bd2, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -15002,6 +15108,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1512057970
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1512057962}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd628b1343984a74b83f0a4f7fd6f87a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scriptsToDisable:
+  - {fileID: 1303272041}
 --- !u!1 &1540122390
 GameObject:
   m_ObjectHideFlags: 0
@@ -15442,6 +15562,7 @@ GameObject:
   - component: {fileID: 1580659390}
   - component: {fileID: 1580659389}
   - component: {fileID: 1580659394}
+  - component: {fileID: 1580659395}
   m_Layer: 5
   m_Name: "\u5C0D\u8A71\u6846-\u7167\u7247\u5C0D\u8A71"
   m_TagString: Untagged
@@ -15539,7 +15660,7 @@ AudioSource:
   m_GameObject: {fileID: 1580659388}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -1405929886273488059, guid: 2ab89238fb119a8428c4084b37636bd2, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -15626,6 +15747,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1580659395
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1580659388}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd628b1343984a74b83f0a4f7fd6f87a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scriptsToDisable:
+  - {fileID: 1303272041}
 --- !u!1 &1590974979
 GameObject:
   m_ObjectHideFlags: 0
@@ -15970,6 +16105,7 @@ GameObject:
   - component: {fileID: 1621323226}
   - component: {fileID: 1621323228}
   - component: {fileID: 1621323227}
+  - component: {fileID: 1621323229}
   m_Layer: 5
   m_Name: "\u9053\u5177\u8AAA\u660E-\u66F8"
   m_TagString: Untagged
@@ -16037,6 +16173,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1621323225}
   m_CullTransparentMesh: 1
+--- !u!114 &1621323229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1621323225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd628b1343984a74b83f0a4f7fd6f87a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scriptsToDisable:
+  - {fileID: 1303272041}
 --- !u!1 &1639339592
 GameObject:
   m_ObjectHideFlags: 0
@@ -16900,6 +17050,7 @@ GameObject:
   - component: {fileID: 1693352383}
   - component: {fileID: 1693352382}
   - component: {fileID: 1693352387}
+  - component: {fileID: 1693352388}
   m_Layer: 5
   m_Name: "\u5C0D\u8A71\u6846-\u881F\u71ED\u5C0D\u8A71"
   m_TagString: Untagged
@@ -16997,7 +17148,7 @@ AudioSource:
   m_GameObject: {fileID: 1693352381}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -1405929886273488059, guid: 2ab89238fb119a8428c4084b37636bd2, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -17084,6 +17235,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1693352388
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1693352381}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd628b1343984a74b83f0a4f7fd6f87a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scriptsToDisable:
+  - {fileID: 1303272041}
 --- !u!1 &1696397822
 GameObject:
   m_ObjectHideFlags: 0
@@ -17305,6 +17470,7 @@ GameObject:
   - component: {fileID: 1705992420}
   - component: {fileID: 1705992419}
   - component: {fileID: 1705992423}
+  - component: {fileID: 1705992424}
   m_Layer: 5
   m_Name: "\u5C0D\u8A71\u6846-\u8863\u6AC3\u5C0D\u8A71"
   m_TagString: Untagged
@@ -17402,7 +17568,7 @@ AudioSource:
   m_GameObject: {fileID: 1705992417}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -1405929886273488059, guid: 2ab89238fb119a8428c4084b37636bd2, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -17489,6 +17655,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1705992424
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1705992417}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd628b1343984a74b83f0a4f7fd6f87a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scriptsToDisable:
+  - {fileID: 1303272041}
 --- !u!1 &1729173127
 GameObject:
   m_ObjectHideFlags: 0
@@ -17794,6 +17974,7 @@ GameObject:
   - component: {fileID: 1743999003}
   - component: {fileID: 1743999007}
   - component: {fileID: 1743999009}
+  - component: {fileID: 1743999010}
   m_Layer: 5
   m_Name: window
   m_TagString: Untagged
@@ -17943,6 +18124,20 @@ MonoBehaviour:
   - {fileID: 261396330}
   - {fileID: 2106874534}
   - {fileID: 1428587737}
+--- !u!114 &1743999010
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1743999001}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd628b1343984a74b83f0a4f7fd6f87a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scriptsToDisable:
+  - {fileID: 1303272041}
 --- !u!1 &1744443452
 GameObject:
   m_ObjectHideFlags: 0
@@ -18129,6 +18324,7 @@ GameObject:
   - component: {fileID: 1765092044}
   - component: {fileID: 1765092043}
   - component: {fileID: 1765092047}
+  - component: {fileID: 1765092048}
   m_Layer: 5
   m_Name: "\u5C0D\u8A71\u6846-\u756B\u5C0D\u8A71"
   m_TagString: Untagged
@@ -18226,7 +18422,7 @@ AudioSource:
   m_GameObject: {fileID: 1765092041}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -1405929886273488059, guid: 2ab89238fb119a8428c4084b37636bd2, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -18313,6 +18509,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1765092048
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1765092041}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd628b1343984a74b83f0a4f7fd6f87a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scriptsToDisable:
+  - {fileID: 1303272041}
 --- !u!1 &1765782345
 GameObject:
   m_ObjectHideFlags: 0
@@ -19015,6 +19225,7 @@ GameObject:
   - component: {fileID: 1813809214}
   - component: {fileID: 1813809213}
   - component: {fileID: 1813809216}
+  - component: {fileID: 1813809217}
   m_Layer: 5
   m_Name: Tears
   m_TagString: Untagged
@@ -19120,6 +19331,20 @@ MonoBehaviour:
   - {fileID: 261396330}
   - {fileID: 2106874534}
   - {fileID: 1428587737}
+--- !u!114 &1813809217
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1813809211}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd628b1343984a74b83f0a4f7fd6f87a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scriptsToDisable:
+  - {fileID: 1303272041}
 --- !u!1 &1856233899
 GameObject:
   m_ObjectHideFlags: 0
@@ -19714,6 +19939,7 @@ GameObject:
   - component: {fileID: 1888169002}
   - component: {fileID: 1888169001}
   - component: {fileID: 1888169004}
+  - component: {fileID: 1888169005}
   m_Layer: 5
   m_Name: "\u9589\u773C\u8F49\u5834\u52D5\u756B"
   m_TagString: Untagged
@@ -19818,6 +20044,20 @@ MonoBehaviour:
   - {fileID: 261396330}
   - {fileID: 2106874534}
   - {fileID: 1428587737}
+--- !u!114 &1888169005
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1888168999}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd628b1343984a74b83f0a4f7fd6f87a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scriptsToDisable:
+  - {fileID: 1303272041}
 --- !u!1 &1900757278
 GameObject:
   m_ObjectHideFlags: 0
