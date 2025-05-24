@@ -9,7 +9,7 @@ public class Clothed : MonoBehaviour
     private Rigidbody2D rb;
     private bool isWalking = false;// 初始為不走路
     private bool isRight = true;
-    private float moveSpeed = 4f;
+    private float moveSpeed = 1f;
 
     public bool canMove = true;
     public float minX = -12f; // 左邊界
