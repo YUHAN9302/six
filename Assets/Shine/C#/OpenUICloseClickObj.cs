@@ -21,6 +21,7 @@ public class OpenUICloseClickObj : MonoBehaviour
             for (int i = 0; i < Obj.Count; i++) {
             Obj[i].GetComponent<Collider2D>().enabled = false;
         }
+
     }
     void OnDisable()
     {

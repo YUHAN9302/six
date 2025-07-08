@@ -19,6 +19,13 @@ public class 下樓 : MonoBehaviour
         if (isClicked) return;
         isClicked = true;
 
+        // 儲存主角位置（假設主角有 "Player" 標籤）
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        if (player != null)
+        {
+            位置紀錄.SetPosition(player.transform.position);
+        }
+
         if (clickSound != null)
         {
             clickSound.Play();
