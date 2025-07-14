@@ -16,8 +16,16 @@ public class Book : MonoBehaviour
         {
             bookAnimation.SetActive(false); // 確保動畫物件一開始是隱藏的
         }
-       FindObjectOfType<SetAndGetSaveData>().SaveData(1, "書本");
-        SetAndGetSaveData.SelectID = 1;
+        if (SetAndGetSaveData.SelectID == 0)
+        {
+            FindObjectOfType<SetAndGetSaveData>().SaveDataIteam(1, "書本");
+            SetAndGetSaveData.SelectID = 1;
+        }
+        else
+        {
+            FindObjectOfType<SetAndGetSaveData>().SaveDataIteam(SetAndGetSaveData.SelectID, "書本");
+        }
+       // SetAndGetSaveData.SelectID = 1;
     }
 
     public void OnMouseUp()

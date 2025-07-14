@@ -10,6 +10,7 @@ public class SetAndGetSaveData : MonoBehaviour
     public TextMeshProUGUI[] Texts;
     static public bool isClickLaodPage;
     static public int SelectID;
+    string newItem;
     private void Awake()
     {
         if (Application.loadedLevelName == "開始介面")
@@ -60,36 +61,57 @@ public class SetAndGetSaveData : MonoBehaviour
         gameObject.SetActive(false);
     }
 
-    public void SaveData(int ID, string newItem)
+    public void SaveDataPos(int iD)
     {
-        // 取得目前玩家位置
+        SelectID = iD;
+
+        SavePlayerPosition(iD);
+        Texts[iD - 1].text = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+    }
+
+    public void SaveDataIteam(int ID, string newItem)
+    {
+        SaveItemData(ID, newItem);
+        Texts[ID - 1].text = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+
+    }
+
+    private void SavePlayerPosition(int ID)
+    {
         Vector2 playerPosition = GameObject.Find("Player").transform.position;
+        var saveManager = FindObjectOfType<SaveManager>();
+        var (_, _, oldItems) = saveManager.LoadPlayerPosition(ID);
+        saveManager.SavePlayerPosition(ID, playerPosition, oldItems);
+    }
 
-        // 先讀取舊的資料
-        var (_, _, oldItems) = FindObjectOfType<SaveManager>().LoadPlayerPosition(ID);
+    private void SaveItemData(int ID, string newItem)
+    {
+        var saveManager = FindObjectOfType<SaveManager>();
 
-        // 確保 list 長度為 5（不足補空字串）
+        // 取得原始資料
+        var (playerPosition, _, oldItems) = saveManager.LoadPlayerPosition(ID);
+
+        // 確保道具欄位長度為 5
         while (oldItems.Count < 5)
-        {
             oldItems.Add("");
-        }
 
-        // 將新的道具放到第一個空位（若滿了你可以選擇替換最後一個）
+        // 新增道具
+        bool added = false;
         for (int i = 0; i < oldItems.Count; i++)
         {
             if (string.IsNullOrEmpty(oldItems[i]))
             {
                 oldItems[i] = newItem;
+                added = true;
                 break;
             }
         }
 
-        // 儲存新資料
-        FindObjectOfType<SaveManager>().SavePlayerPosition(ID, playerPosition, oldItems);
+        // 如果都滿了，就覆蓋最後一格
+        if (!added)
+            oldItems[oldItems.Count - 1] = newItem;
 
-        // 更新 UI 時間
-        Texts[ID - 1].text = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+        // 儲存時保留原本位置、不更新位置
+        saveManager.SavePlayerPosition(ID, playerPosition, oldItems);
     }
-
-
 }
