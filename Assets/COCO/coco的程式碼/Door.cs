@@ -27,7 +27,7 @@ public class Door : MonoBehaviour
         {
             PlayLockedSound();
             CloseDoorDialogueUI.SetActive(true);
-
+            CloseDoorDialogueUI.GetComponent<DialogueUI>().Reset();
         }
     }
 
@@ -88,5 +88,10 @@ public class Door : MonoBehaviour
             OpenDoorDialogueUI.SetActive(false);
             StartCoroutine(LoadNextSceneAfterDelay(0.5f));
         }
+    }
+    private void Update()
+    {
+            GetComponent<BoxCollider2D>().enabled = !CloseDoorDialogueUI.active;
+        
     }
 }
