@@ -20,14 +20,19 @@ public class Door : MonoBehaviour
         if (TriggerManager.Instance != null && TriggerManager.Instance.AreAllClicked())
         {
             OpenDoor();
-            OpenDoorDialogueUI.SetActive(true);
-
+            if (OpenDoorDialogueUI != null)
+            {
+                OpenDoorDialogueUI.SetActive(true);
+            }
         }
         else
         {
             PlayLockedSound();
-            CloseDoorDialogueUI.SetActive(true);
-            CloseDoorDialogueUI.GetComponent<DialogueUI>().Reset();
+            if (CloseDoorDialogueUI != null)
+            {
+                CloseDoorDialogueUI.SetActive(true);
+                CloseDoorDialogueUI.GetComponent<DialogueUI>().Reset();
+            }
         }
     }
 
@@ -91,7 +96,9 @@ public class Door : MonoBehaviour
     }
     private void Update()
     {
+        if (CloseDoorDialogueUI != null)
+        {
             GetComponent<BoxCollider2D>().enabled = !CloseDoorDialogueUI.active;
-        
+        }
     }
 }
