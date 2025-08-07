@@ -30,4 +30,8 @@ public class TriggerManager : MonoBehaviour
     {
         return clickedObjects.Count == allClickableObjects.Count;
     }
+    public bool IsObjectClicked(string objectName)
+    {
+        return clickedObjects.Contains(objectName);
+    }
 }
