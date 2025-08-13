@@ -1,0 +1,47 @@
+using System.Collections;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+
+public class 用餐劇情觸發 : MonoBehaviour
+{
+    public string 用餐劇情;  // 場景名稱
+    public GameObject transitionAnimationObject;  // 放過場動畫物件（要有 Animator）
+    public float animationDuration = 1f;  // 過場動畫長度(秒)
+
+    private bool triggered = false;
+    private static bool alreadyTriggered = false; // 靜態變數，跨場景保留狀態
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (!triggered && !alreadyTriggered && collision.CompareTag("Player"))
+        {
+            triggered = true;
+            alreadyTriggered = true; // 記錄已觸發
+            StartCoroutine(PlayTransitionAndLoad());
+        }
+    }
+
+    private IEnumerator PlayTransitionAndLoad()
+    {
+        if (transitionAnimationObject != null)
+        {
+            transitionAnimationObject.SetActive(true);
+            Animator animator = transitionAnimationObject.GetComponent<Animator>();
+            if (animator != null)
+            {
+                animator.SetTrigger("Start");  // 你的 Animator 需要有名為 Start 的 Trigger
+                yield return new WaitForSeconds(animationDuration);
+            }
+            else
+            {
+                yield return new WaitForSeconds(animationDuration);
+            }
+        }
+        else
+        {
+            yield return new WaitForSeconds(animationDuration);
+        }
+
+        SceneManager.LoadScene(用餐劇情);
+    }
+}

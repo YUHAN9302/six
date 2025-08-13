@@ -459,8 +459,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.0000500679, y: -0.0001001358, z: 0}
-    m_Extent: {x: 6.72055, y: 6.7201, z: 0}
+    m_Center: {x: 0.00034999847, y: 0.00049996376, z: 0}
+    m_Extent: {x: 6.71955, y: 6.7197, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -1965,8 +1965,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.0010001659, y: 0.0002501011, z: 0}
-    m_Extent: {x: 6.7200003, y: 6.72025, z: 0}
+    m_Center: {x: 0, y: 0.00039982796, z: 0}
+    m_Extent: {x: 6.72, y: 6.7202997, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -2403,8 +2403,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.0001001358, y: -0.00024986267, z: 0}
-    m_Extent: {x: 5.9407, y: 5.94035, z: 0}
+    m_Center: {x: 0.00014996529, y: -0.0001001358, z: 0}
+    m_Extent: {x: 5.94075, y: 5.9407, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -9463,8 +9463,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.00024986267, y: -0.00034999847, z: 0}
-    m_Extent: {x: 6.72045, y: 6.72035, z: 0}
+    m_Center: {x: -0.00020003319, y: -0.00029993057, z: 0}
+    m_Extent: {x: 6.7207003, y: 6.7204, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -10810,8 +10810,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: -9.62, y: -1.131, z: 0}
-  m_LocalScale: {x: 0.33529747, y: 0.33529747, z: 0.33529747}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 118910542}
   - {fileID: 1978213006}
@@ -12300,7 +12300,7 @@ Transform:
   m_GameObject: {fileID: 2056873788}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9.62, y: -0.09157789, z: -10}
+  m_LocalPosition: {x: -9.62, y: -0.20100003, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
