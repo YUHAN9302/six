@@ -15,8 +15,13 @@ public class 用餐劇情觸發 : MonoBehaviour
     {
         if (!triggered && !alreadyTriggered && collision.CompareTag("Player"))
         {
+           
             triggered = true;
             alreadyTriggered = true; // 記錄已觸發
+
+            // 切換場景前保存位置與動畫
+            FindObjectOfType<人物位置>().SaveCurrentTransform();
+
             StartCoroutine(PlayTransitionAndLoad());
         }
     }

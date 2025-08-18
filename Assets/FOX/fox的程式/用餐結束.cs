@@ -42,6 +42,9 @@ public class 用餐結束 : MonoBehaviour
             yield return new WaitForSeconds(animationDuration);
         }
 
+        // ★ 在跳回 A 場景前，標記餐桌動畫已播過
+        判定餐桌動畫.TableAnimPlayed = true;
+
         SceneManager.LoadScene(originalSceneName);
     }
 }

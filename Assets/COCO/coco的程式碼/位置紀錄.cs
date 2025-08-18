@@ -8,6 +8,8 @@ public class 位置紀錄 : MonoBehaviour
     public static 位置紀錄 Instance;
 
     public static Vector3? LastPosition = null;
+    public static string LastAnimState = null; // 新增：最後播放的動畫狀態名稱
+
 
     void Awake()
     {
@@ -35,5 +37,15 @@ public class 位置紀錄 : MonoBehaviour
     public static void ClearPosition()
     {
         LastPosition = null;
+    }
+    //記錄動畫
+    public static void SetAnimState(string stateName)
+    {
+        LastAnimState = stateName;
+    }
+
+    public static string GetAnimState()
+    {
+        return LastAnimState;
     }
 }
