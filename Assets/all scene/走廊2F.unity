@@ -459,8 +459,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.00014996529, y: -0.0000500679, z: 0}
-    m_Extent: {x: 6.7205496, y: 6.72085, z: 0}
+    m_Center: {x: 0.00020003319, y: 0.00020003319, z: 0}
+    m_Extent: {x: 6.7195997, y: 6.7199, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -1921,8 +1921,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.0000500679, y: 0.0001001358, z: 0}
-    m_Extent: {x: 6.72055, y: 6.7201, z: 0}
+    m_Center: {x: -0.0002501011, y: 0.00029993057, z: 0}
+    m_Extent: {x: 6.72025, y: 6.7206, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -2155,7 +2155,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ExcelFileName: Dialog.xlsx
-  SheetName: "\u9577\u756B(\u76F4)\u5C0D\u8A71"
+  SheetName: "\u9577\u756B(\u76F4)\u5C0D\u8A712.0"
   dialogueLines: []
 --- !u!222 &411976257
 CanvasRenderer:
@@ -2359,8 +2359,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.00020003319, y: 0.00029993057, z: 0}
-    m_Extent: {x: 5.9404, y: 5.9406, z: 0}
+    m_Center: {x: 0.00069999695, y: 0.0000500679, z: 0}
+    m_Extent: {x: 5.9402, y: 5.94075, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -4632,7 +4632,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ExcelFileName: Dialog.xlsx
-  SheetName: "\u9577\u756B\u5C0D\u8A71"
+  SheetName: "\u9577\u756B\u5C0D\u8A712.0"
   dialogueLines: []
 --- !u!222 &921145681
 CanvasRenderer:
@@ -6261,7 +6261,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ExcelFileName: Dialog.xlsx
-  SheetName: "\u65B9\u756B\u5C0D\u8A71"
+  SheetName: "\u65B9\u756B\u5C0D\u8A712.0"
   dialogueLines: []
 --- !u!222 &1128056604
 CanvasRenderer:
@@ -9419,8 +9419,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.00064992905, y: 0, z: 0}
-    m_Extent: {x: 6.72025, y: 6.7205, z: 0}
+    m_Center: {x: -0.00014996529, y: 0.00020003319, z: 0}
+    m_Extent: {x: 6.7196503, y: 6.7201004, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -10803,6 +10803,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0672de8c8539eec4f9f257649d1e1829, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 0}
 --- !u!1 &1902487943
 GameObject:
   m_ObjectHideFlags: 0
