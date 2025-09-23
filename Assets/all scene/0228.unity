@@ -486,6 +486,7 @@ MonoBehaviour:
   currentLine: 0
   CloseObj: {fileID: 1743999001}
   dialogueImage: {fileID: 789861268}
+  dialogueImageBig: {fileID: 0}
   audioSource: {fileID: 25075062}
 --- !u!114 &25075060
 MonoBehaviour:
@@ -1163,6 +1164,7 @@ MonoBehaviour:
   currentLine: 0
   CloseObj: {fileID: 0}
   dialogueImage: {fileID: 670072971}
+  dialogueImageBig: {fileID: 0}
   audioSource: {fileID: 84608158}
 --- !u!114 &84608156
 MonoBehaviour:
@@ -2642,6 +2644,7 @@ MonoBehaviour:
   currentLine: 0
   CloseObj: {fileID: 0}
   dialogueImage: {fileID: 0}
+  dialogueImageBig: {fileID: 0}
   audioSource: {fileID: 244912717}
 --- !u!114 &244912715
 MonoBehaviour:
@@ -3115,8 +3118,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.00040006638, y: -0.00055003166, z: 0}
-    m_Extent: {x: 6.7205, y: 6.72025, z: 0}
+    m_Center: {x: 0.00014996529, y: 0.00024986267, z: 0}
+    m_Extent: {x: 6.72005, y: 6.71985, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -4138,6 +4141,7 @@ MonoBehaviour:
   currentLine: 0
   CloseObj: {fileID: 1225623054}
   dialogueImage: {fileID: 225567251}
+  dialogueImageBig: {fileID: 0}
   audioSource: {fileID: 452552315}
 --- !u!114 &452552312
 MonoBehaviour:
@@ -7907,6 +7911,81 @@ RectTransform:
   m_AnchoredPosition: {x: -716, y: 0}
   m_SizeDelta: {x: 250, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &803243908
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 803243909}
+  - component: {fileID: 803243911}
+  - component: {fileID: 803243910}
+  m_Layer: 5
+  m_Name: BigImage
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &803243909
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 803243908}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1512057963}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 118}
+  m_SizeDelta: {x: 500, y: 500}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &803243910
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 803243908}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &803243911
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 803243908}
+  m_CullTransparentMesh: 1
 --- !u!1 &803934941
 GameObject:
   m_ObjectHideFlags: 0
@@ -10779,8 +10858,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.00055003166, y: -0.0001001358, z: 0}
-    m_Extent: {x: 6.7204504, y: 6.7208, z: 0}
+    m_Center: {x: 0.00029993057, y: 0.0002501011, z: 0}
+    m_Extent: {x: 6.7205, y: 6.7206497, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -14325,8 +14404,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.0000500679, y: 0, z: 0}
-    m_Extent: {x: 5.93965, y: 5.9402, z: 0}
+    m_Center: {x: 0, y: -0.00065016747, z: 0}
+    m_Extent: {x: 5.9406, y: 5.9401503, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -14960,6 +15039,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1441590037}
+  - {fileID: 803243909}
   - {fileID: 2081363851}
   m_Father: {fileID: 1313318859}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -14994,6 +15074,7 @@ MonoBehaviour:
   currentLine: 0
   CloseObj: {fileID: 0}
   dialogueImage: {fileID: 2123220403}
+  dialogueImageBig: {fileID: 803243910}
   audioSource: {fileID: 1512057969}
 --- !u!114 &1512057967
 MonoBehaviour:
@@ -15624,6 +15705,7 @@ MonoBehaviour:
   currentLine: 0
   CloseObj: {fileID: 706972738}
   dialogueImage: {fileID: 950656050}
+  dialogueImageBig: {fileID: 0}
   audioSource: {fileID: 1580659394}
 --- !u!114 &1580659391
 MonoBehaviour:
@@ -17112,6 +17194,7 @@ MonoBehaviour:
   currentLine: 0
   CloseObj: {fileID: 0}
   dialogueImage: {fileID: 2101258819}
+  dialogueImageBig: {fileID: 0}
   audioSource: {fileID: 1693352387}
 --- !u!114 &1693352384
 MonoBehaviour:
@@ -17552,6 +17635,7 @@ MonoBehaviour:
   currentLine: 0
   CloseObj: {fileID: 0}
   dialogueImage: {fileID: 1140496902}
+  dialogueImageBig: {fileID: 0}
   audioSource: {fileID: 1705992423}
 --- !u!114 &1705992421
 MonoBehaviour:
@@ -18405,6 +18489,7 @@ MonoBehaviour:
   currentLine: 0
   CloseObj: {fileID: 1813809211}
   dialogueImage: {fileID: 977979417}
+  dialogueImageBig: {fileID: 0}
   audioSource: {fileID: 1765092047}
 --- !u!114 &1765092045
 MonoBehaviour:

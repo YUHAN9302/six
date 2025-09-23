@@ -14,11 +14,13 @@ public class DialogueUI : MonoBehaviour
     public GameObject CloseObj;
 
     public Image dialogueImage;
+    public Image dialogueImageBig;   // F欄：對話大圖
     public AudioSource audioSource;
     void Start()
     {
         dialogueManager = this.GetComponent<DialogueManager>();
         nextButton.onClick.AddListener(ShowNextLine);
+        currentLine = 0;
         ShowNextLine(); // 一開始顯示第一句
     }
 
@@ -32,7 +34,8 @@ public class DialogueUI : MonoBehaviour
 
             if (dialogueImage != null && line.image != null)
                 dialogueImage.sprite = line.image;
-
+            if (dialogueImageBig != null && line.bigImage != null)
+                dialogueImageBig.sprite = line.bigImage;
             if (audioSource != null && line.audio != null)
                 audioSource.PlayOneShot(line.audio);
 

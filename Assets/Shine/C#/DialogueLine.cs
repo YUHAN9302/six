@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 [System.Serializable]
 public class DialogueLine
 {
@@ -6,7 +6,8 @@ public class DialogueLine
     public string content;
     public string imageFile;
     public string audioFile;
-
-    public Sprite image;       // �Ϥ��귽
-    public AudioClip audio;    // ���ĸ귽
+    public string bigImageFile; // ⭐ 新增：對話大圖檔名
+    public Sprite image;
+    public AudioClip audio;
+    public Sprite bigImage; // ⭐ 新增：對話大圖
 }
