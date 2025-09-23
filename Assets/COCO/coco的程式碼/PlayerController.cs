@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class 人物走路程式 : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
     private Animator animator;
     private Rigidbody2D rb; // 2D 物理剛體
@@ -17,7 +17,7 @@ public class 人物走路程式 : MonoBehaviour
     public float maxX = 13f;  // 右邊界
 
     public Clothed ClothedScript;
-
+    public float direction =-1;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,11 +26,13 @@ public class 人物走路程式 : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
 
         animator.SetBool("isClothed", false);
+    
     }
 
     // Update is called once per frame
     void Update()
     {
+       
         /*  if (!canMove)
           {
               rb.velocity = new Vector2(0, rb.velocity.y); // 停止移動
@@ -64,14 +66,15 @@ public class 人物走路程式 : MonoBehaviour
         }*/ /*試人物是否可以換裝用*/
 
 
-
         float moveX = 0f;
+
 
         // 檢測 A 或 ← 鍵移動左，D 或 → 鍵移動右
         if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
         {
             isWalking = true;
             isRight = false;
+            direction = 1;
             moveX = moveSpeed;
 
             // transform.rotation = Quaternion.Euler(0, 0, 0); // 角色翻轉
@@ -81,14 +84,14 @@ public class 人物走路程式 : MonoBehaviour
         {
             isWalking = true;
             isRight = true;
+            direction = -1;
             moveX = -moveSpeed;
 
 
             // transform.rotation = Quaternion.Euler(0, 180, 0); // 角色朝右
         }
         else {
-           
-            isWalking = false;
+             isWalking = false;
         }
 
         animator.SetBool("isWalking", isWalking);

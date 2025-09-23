@@ -8,14 +8,14 @@ public class 暫停 : MonoBehaviour
 {
     public GameObject pauseMenu;
     private bool isPaused = false;
-    private 人物走路程式 playerMovement;
+    private PlayerController playerMovement;
     Setting[] SettingObjects;
     SetAndGetSaveData[] LoadObjects;
 
     // Start is called before the first frame update
     void Start()
     {
-        playerMovement = FindObjectOfType<人物走路程式>(); // 找到角色的移動腳本
+        playerMovement = FindObjectOfType<PlayerController>(); // 找到角色的移動腳本
         pauseMenu.SetActive(false);
         SettingObjects = GameObject.FindObjectsOfType<Setting>(true);
         LoadObjects = GameObject.FindObjectsOfType<SetAndGetSaveData>(true);

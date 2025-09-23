@@ -1,58 +1,67 @@
-using System.Collections;
-using System.Collections.Generic;
+ï»¿using System.Collections;
 using UnityEngine;
 
 public class Book : MonoBehaviour
 {
-    public GameObject bookAnimation;  // ®Ñ¥»°Êµeªº GameObject
-    private bool animationPlayed = false;  // °Êµe¬O§_¼½©ñ¹L
+    [Header("æ›¸æœ¬å‹•ç•«ç‰©ä»¶")]
+    public GameObject bookAnimation;
 
+    [Header("å‹•ç•«æŒçºŒç§’æ•¸ (0 è¡¨ç¤ºæ°¸ä¹…é¡¯ç¤º)")]
+    public float animationDuration = 2f;
 
+    private bool isCollected = false;
 
-    // Start is called before the first frame update
     void Start()
     {
         if (bookAnimation != null)
         {
-            bookAnimation.SetActive(false); // ½T«O°Êµeª«¥ó¤@¶}©l¬OÁôÂÃªº
+            bookAnimation.SetActive(false); // é–‹å§‹æ™‚éš±è—å‹•ç•«
         }
-        if (SetAndGetSaveData.SelectID == 0)
+    }
+
+    // ç©å®¶é»æ“Šï¼ˆæˆ–è§¸ç™¼ï¼‰æ™‚æ’¿èµ·æ›¸æœ¬
+    public void OnMouseUp()
+    {
+        if (isCollected) return; // é¿å…é‡è¤‡è§¸ç™¼
+        isCollected = true;
+
+        // é¡¯ç¤ºå‹•ç•«
+        if (bookAnimation != null)
         {
-            FindObjectOfType<SetAndGetSaveData>().SaveDataIteam(1, "®Ñ¥»");
-            SetAndGetSaveData.SelectID = 1;
+            bookAnimation.SetActive(true);
+
+            if (animationDuration > 0)
+            {
+                StartCoroutine(HideAfterSeconds(animationDuration));
+            }
+        }
+
+        // å­˜åˆ°ç›®å‰é¸æ“‡çš„æª”æ¡ˆ
+        int saveID = SetAndGetSaveData.SelectID;
+        if (saveID > 0)
+        {
+            var saveSystem = FindObjectOfType<SetAndGetSaveData>();
+            if (saveSystem != null)
+            {
+                saveSystem.SaveDataItem(saveID, "æ›¸æœ¬");
+                Debug.Log($"ğŸ“˜ æ›¸æœ¬å·²åŠ å…¥å­˜æª” {saveID}");
+            }
         }
         else
         {
-            FindObjectOfType<SetAndGetSaveData>().SaveDataIteam(SetAndGetSaveData.SelectID, "®Ñ¥»");
-        }
-       // SetAndGetSaveData.SelectID = 1;
-    }
-
-    public void OnMouseUp()
-    {
-        if (!bookAnimation.activeSelf)
-        {
-            bookAnimation.SetActive(true);  // Åã¥Ü®Ñ¥»°Êµe
-            gameObject.SetActive(false);     // ÁôÂÃ®Ñ¥»ª«¥ó
-
+            Debug.LogWarning("âŒ æ²’æœ‰é¸æ“‡æœ‰æ•ˆå­˜æª”ï¼Œæ›¸æœ¬ä¸æœƒè¢«ä¿å­˜");
         }
 
+        // éš±è—æ›¸æœ¬æœ¬é«”
+        gameObject.SetActive(false);
     }
 
-
+    // å‹•ç•«é¡¯ç¤ºä¸€æ®µæ™‚é–“å¾Œè‡ªå‹•éš±è—
     private IEnumerator HideAfterSeconds(float seconds)
     {
-        yield return new WaitForSeconds(seconds);  // µ¥«İ«ü©w®É¶¡
-        bookAnimation.SetActive(true);  // ÁôÂÃ°Êµeª«¥ó
-        gameObject.SetActive(false);     // ÁôÂÃ®Ñ¥»ª«¥ó
-    }
+        yield return new WaitForSeconds(seconds);
 
-   
-
-
-    // Update is called once per frame
-    void Update()
-    {
-
+        if (bookAnimation != null)
+            bookAnimation.SetActive(false);
     }
 }

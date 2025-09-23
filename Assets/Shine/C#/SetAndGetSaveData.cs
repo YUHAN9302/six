@@ -4,40 +4,45 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using System;
+using UnityEngine.SceneManagement;
 
 public class SetAndGetSaveData : MonoBehaviour
 {
+    [Header("UI 顯示每個存檔時間")]
     public TextMeshProUGUI[] Texts;
-    static public bool isClickLaodPage;
-    static public int SelectID;
-    string newItem;
+
+    public static bool isClickLoadPage;
+    public static int SelectID;
+
     private void Awake()
     {
-        if (Application.loadedLevelName == "開始介面")
+        // 在開始介面保留此物件
+        if (SceneManager.GetActiveScene().name == "開始介面")
         {
             DontDestroyOnLoad(gameObject);
         }
-
     }
+
     private void OnEnable()
     {
-        isClickLaodPage = true;
-
+        isClickLoadPage = true;
     }
+
     private void OnDisable()
     {
-        isClickLaodPage = false;
-
+        isClickLoadPage = false;
     }
-    // Start is called before the first frame update
+
     void Start()
     {
+        var saveManager = FindObjectOfType<SaveManager>();
+
         for (int i = 0; i < 5; i++)
         {
-            var (loadedPosition, saveTime, _) = FindObjectOfType<SaveManager>().LoadPlayerPosition(i + 1);
+            var (_, _, saveTime, _) = saveManager.LoadPlayerState(i + 1);
             Texts[i].text = saveTime;
 
-            if (Application.loadedLevelName == "開始介面")
+            if (SceneManager.GetActiveScene().name == "開始介面")
             {
                 bool hasData = saveTime != "No Data";
                 Texts[i].GetComponentInParent<Button>().interactable = hasData;
@@ -45,57 +50,94 @@ public class SetAndGetSaveData : MonoBehaviour
         }
     }
 
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    // === 讀檔並切場景 ===
     public void LoadData(int ID)
     {
         SelectID = ID;
-        Application.LoadLevel("0228");
-        var (loadedPosition, saveTime, _) = FindObjectOfType<SaveManager>().LoadPlayerPosition(ID);
-        FindObjectOfType<SaveManager>().PlayerPos = loadedPosition;
-        Debug.Log($"玩家位置載入成功：{loadedPosition}，存檔時間：{saveTime}");
+        SceneManager.sceneLoaded += OnSceneLoaded;
+        SceneManager.LoadScene("0228");
+    }
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        if (scene.name != "0228") return;
+
+        SceneManager.sceneLoaded -= OnSceneLoaded; // 只執行一次
+
+        var saveManager = FindObjectOfType<SaveManager>();
+        var (loadedPosition, moveSpeed, saveTime, _) = saveManager.LoadPlayerState(SelectID);
+
+        // 更新 SaveManager 的快取
+        saveManager.PlayerPos = loadedPosition;
+        saveManager.PlayerMoveSpeed = moveSpeed;
+
+        // 套用到 Player
+        var player = GameObject.Find("Player")?.GetComponent<PlayerController>();
+        if (player != null)
+        {
+            player.transform.position = loadedPosition;
+            player.direction = moveSpeed;
+            if (player.direction == -1)
+            {
+                player.GetComponent<Animator>().SetBool("isRight", true);
+
+            }
+            if (player.direction == 1)
+            {
+                player.GetComponent<Animator>().SetBool("isRight", false);
+
+            }
+            Debug.Log($"✅ 玩家載入成功：位置 {loadedPosition}，速度 {moveSpeed}，時間 {saveTime}");
+        }
+        else
+        {
+            Debug.LogWarning("❌ 場景中沒有找到 Player 或 PlayerController");
+        }
+
         gameObject.SetActive(false);
     }
 
-    public void SaveDataPos(int iD)
+    // === 存檔：位置 + 速度 ===
+    public void SaveDataPos(int ID)
     {
-        SelectID = iD;
-
-        SavePlayerPosition(iD);
-        Texts[iD - 1].text = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+        SelectID = ID;
+        SavePlayerPosition(ID);
+        Texts[ID - 1].text = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
     }
 
-    public void SaveDataIteam(int ID, string newItem)
+    // === 存檔：道具 ===
+    public void SaveDataItem(int ID, string newItem)
     {
         SaveItemData(ID, newItem);
         Texts[ID - 1].text = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
-
     }
 
     private void SavePlayerPosition(int ID)
     {
-        Vector2 playerPosition = GameObject.Find("Player").transform.position;
+        var player = GameObject.Find("Player")?.GetComponent<PlayerController>();
+        if (player == null)
+        {
+            Debug.LogWarning("❌ 找不到 Player 或 PlayerController，無法存檔");
+            return;
+        }
+
+        Vector2 playerPosition = player.transform.position;
+        float moveSpeed = player.direction;
+
         var saveManager = FindObjectOfType<SaveManager>();
-        var (_, _, oldItems) = saveManager.LoadPlayerPosition(ID);
-        saveManager.SavePlayerPosition(ID, playerPosition, oldItems);
+        var (_, _, _, oldItems) = saveManager.LoadPlayerState(ID);
+
+        saveManager.SavePlayerState(ID, playerPosition, moveSpeed, oldItems);
     }
 
     private void SaveItemData(int ID, string newItem)
     {
         var saveManager = FindObjectOfType<SaveManager>();
+        var (playerPosition, moveSpeed, _, oldItems) = saveManager.LoadPlayerState(ID);
 
-        // 取得原始資料
-        var (playerPosition, _, oldItems) = saveManager.LoadPlayerPosition(ID);
-
-        // 確保道具欄位長度為 5
         while (oldItems.Count < 5)
             oldItems.Add("");
 
-        // 新增道具
         bool added = false;
         for (int i = 0; i < oldItems.Count; i++)
         {
@@ -106,12 +148,9 @@ public class SetAndGetSaveData : MonoBehaviour
                 break;
             }
         }
-
-        // 如果都滿了，就覆蓋最後一格
         if (!added)
             oldItems[oldItems.Count - 1] = newItem;
 
-        // 儲存時保留原本位置、不更新位置
-        saveManager.SavePlayerPosition(ID, playerPosition, oldItems);
+        saveManager.SavePlayerState(ID, playerPosition, moveSpeed, oldItems);
     }
 }

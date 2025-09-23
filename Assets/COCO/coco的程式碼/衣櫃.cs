@@ -5,7 +5,7 @@ using UnityEngine;
 public class 衣櫃 : MonoBehaviour
 {
     public GameObject player; // 角色物件
-    private 人物走路程式 playerScript; // 角色的腳本
+    private PlayerController playerScript; // 角色的腳本
     public GameObject closeEyeAnimation; // 閉眼動畫物件
     public float closeEyeDuration = 1.5f; // 閉眼動畫總時長
     private bool hasChangedClothes = false; // 是否已經換過裝
@@ -17,7 +17,7 @@ public class 衣櫃 : MonoBehaviour
     {
         if (player != null)
         {
-            playerScript = player.GetComponent<人物走路程式>();
+            playerScript = player.GetComponent<PlayerController>();
         }
         else
         {
