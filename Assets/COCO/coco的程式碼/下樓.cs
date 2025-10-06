@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class 下樓 : MonoBehaviour
 {
-    public AudioSource clickSound;
+    public GameObject soundObject;
     public string sceneName = "走廊1F";
 
     private bool isClicked = false;
@@ -26,18 +26,21 @@ public class 下樓 : MonoBehaviour
             位置紀錄.SetPosition(player.transform.position);
         }
 
-        if (clickSound != null)
-        {
-            clickSound.Play();
-        }
 
-        StartCoroutine(PlayCloseEyesAndLoadScene());
+
+        StartCoroutine(PlaySoundAndChangeScene());
     }
 
     // Update is called once per frame
-    IEnumerator PlayCloseEyesAndLoadScene()
+    IEnumerator PlaySoundAndChangeScene()
     {
-        // 播放動畫
+        // 播放音效物件
+        if (soundObject != null)
+        {
+            soundObject.SetActive(true);
+        }
+
+        // 播放關眼動畫
         if (closeEyesAnimationObject != null)
         {
             closeEyesAnimationObject.SetActive(true);
@@ -45,21 +48,16 @@ public class 下樓 : MonoBehaviour
             if (animator != null)
             {
                 animator.SetTrigger("CloseEyes");
-
-                // 假設動畫長度為 2 秒，可根據實際動畫長度調整
-                yield return new WaitForSeconds(1f);
-            }
-            else
-            {
-                // 若沒找到 animator，直接進入場景
-                yield return new WaitForSeconds(1f);
             }
         }
 
-        // 等待音效（如果有）結束
-        if (clickSound != null)
+        // 等待 1 秒
+        yield return new WaitForSeconds(2f);
+
+        // 關閉音效物件
+        if (soundObject != null)
         {
-            yield return new WaitForSeconds(clickSound.clip.length);
+            soundObject.SetActive(false);
         }
 
         SceneManager.LoadScene("走廊1F");
