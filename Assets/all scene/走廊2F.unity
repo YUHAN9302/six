@@ -459,8 +459,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.00014996529, y: -0.00034999847, z: 0}
-    m_Extent: {x: 6.7203503, y: 6.72055, z: 0}
+    m_Center: {x: -0.00049996376, y: -0.00020003319, z: 0}
+    m_Extent: {x: 6.7201996, y: 6.7207003, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -2271,8 +2271,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.00020003319, y: 0.00055003166, z: 0}
-    m_Extent: {x: 6.7207003, y: 6.7199497, z: 0}
+    m_Center: {x: -0.0002501011, y: -0.0002501011, z: 0}
+    m_Extent: {x: 6.72075, y: 6.72075, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -2840,8 +2840,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.0005002022, y: 0.00029993057, z: 0}
-    m_Extent: {x: 5.9403, y: 5.9403, z: 0}
+    m_Center: {x: 0.00020003319, y: -0.00034999847, z: 0}
+    m_Extent: {x: 5.9406004, y: 5.94015, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -10385,8 +10385,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.00065016747, y: -0.00055003166, z: 0}
-    m_Extent: {x: 6.7199497, y: 6.72005, z: 0}
+    m_Center: {x: 0.0001001358, y: 0.0000500679, z: 0}
+    m_Extent: {x: 6.7198, y: 6.72085, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -11610,7 +11610,8 @@ GameObject:
   - component: {fileID: 1887423491}
   - component: {fileID: 1887423498}
   - component: {fileID: 1887423490}
-  - component: {fileID: 1887423497}
+  - component: {fileID: 1887423499}
+  - component: {fileID: 1887423500}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -11790,23 +11791,6 @@ Transform:
   - {fileID: 2071522863}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
---- !u!114 &1887423497
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1887423488}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: db727a58e6e40f543b6964cd535a574f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 4
-  isClothed: 1
-  canMove: 1
-  minX: -12
-  maxX: 13
 --- !u!114 &1887423498
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11820,6 +11804,38 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 0}
+--- !u!114 &1887423499
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1887423488}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42839d2ce80e6704e8c54d7a78a165d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canMove: 1
+  minX: -12
+  maxX: 30
+--- !u!114 &1887423500
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1887423488}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d9aa66a297535c4aa517d93ef3ac810, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 4
+  canMove: 1
+  minX: -12
+  maxX: 30
+  ClothedScript: {fileID: 1887423499}
 --- !u!1 &1902487943
 GameObject:
   m_ObjectHideFlags: 0
@@ -12129,10 +12145,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3

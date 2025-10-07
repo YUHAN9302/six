@@ -652,8 +652,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.0000500679, y: 0.0000500679, z: 0}
-    m_Extent: {x: 6.72045, y: 6.72015, z: 0}
+    m_Center: {x: -0.00064992905, y: -0.00034999847, z: 0}
+    m_Extent: {x: 6.72015, y: 6.72045, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -2723,7 +2723,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scriptsToDisable:
-  - {fileID: 1887423497}
+  - {fileID: 0}
 --- !u!82 &293924930
 AudioSource:
   m_ObjectHideFlags: 0
@@ -3351,8 +3351,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.00014996529, y: 0.00014996529, z: 0}
-    m_Extent: {x: 6.7206497, y: 6.72075, z: 0}
+    m_Center: {x: -0.0000500679, y: 0.0000500679, z: 0}
+    m_Extent: {x: 6.72095, y: 6.72075, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -3439,7 +3439,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scriptsToDisable:
-  - {fileID: 1887423497}
+  - {fileID: 0}
 --- !u!82 &411976253
 AudioSource:
   m_ObjectHideFlags: 0
@@ -3871,8 +3871,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.000049829483, y: -0.00064992905, z: 0}
-    m_Extent: {x: 5.9404497, y: 5.94025, z: 0}
+    m_Center: {x: -0.00049996376, y: -0.0002501011, z: 0}
+    m_Extent: {x: 5.9399004, y: 5.9404497, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -7621,7 +7621,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scriptsToDisable:
-  - {fileID: 1887423497}
+  - {fileID: 0}
 --- !u!82 &921145677
 AudioSource:
   m_ObjectHideFlags: 0
@@ -10035,7 +10035,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scriptsToDisable:
-  - {fileID: 1887423497}
+  - {fileID: 0}
 --- !u!82 &1128056600
 AudioSource:
   m_ObjectHideFlags: 0
@@ -10507,7 +10507,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scriptsToDisable:
-  - {fileID: 1887423497}
+  - {fileID: 0}
 --- !u!82 &1178526797
 AudioSource:
   m_ObjectHideFlags: 0
@@ -11379,7 +11379,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scriptsToDisable:
-  - {fileID: 1887423497}
+  - {fileID: 0}
 --- !u!82 &1272346520
 AudioSource:
   m_ObjectHideFlags: 0
@@ -14175,8 +14175,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.000300169, y: -0.00029993057, z: 0}
-    m_Extent: {x: 6.7202997, y: 6.7199, z: 0}
+    m_Center: {x: -0.00040006638, y: 0.0001001358, z: 0}
+    m_Extent: {x: 6.7205, y: 6.7208, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -15604,7 +15604,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scriptsToDisable:
-  - {fileID: 1887423497}
+  - {fileID: 0}
 --- !u!82 &1783001329
 AudioSource:
   m_ObjectHideFlags: 0
@@ -16130,9 +16130,10 @@ GameObject:
   - component: {fileID: 1887423494}
   - component: {fileID: 1887423493}
   - component: {fileID: 1887423491}
-  - component: {fileID: 1887423497}
   - component: {fileID: 1887423498}
   - component: {fileID: 1887423490}
+  - component: {fileID: 1887423499}
+  - component: {fileID: 1887423500}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -16312,23 +16313,6 @@ Transform:
   - {fileID: 2071522863}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
---- !u!114 &1887423497
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1887423488}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: db727a58e6e40f543b6964cd535a574f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 4
-  isClothed: 1
-  canMove: 1
-  minX: -12
-  maxX: 16
 --- !u!114 &1887423498
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16342,6 +16326,38 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 0}
+--- !u!114 &1887423499
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1887423488}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d9aa66a297535c4aa517d93ef3ac810, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 4
+  canMove: 1
+  minX: -12
+  maxX: 30
+  ClothedScript: {fileID: 1887423500}
+--- !u!114 &1887423500
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1887423488}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42839d2ce80e6704e8c54d7a78a165d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canMove: 1
+  minX: -12
+  maxX: 30
 --- !u!1 &1902487943
 GameObject:
   m_ObjectHideFlags: 0
@@ -18109,7 +18125,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scriptsToDisable:
-  - {fileID: 1887423497}
+  - {fileID: 0}
 --- !u!82 &2077440182
 AudioSource:
   m_ObjectHideFlags: 0

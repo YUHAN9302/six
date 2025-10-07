@@ -591,8 +591,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.00055003166, y: -0.00014996529, z: 0}
-    m_Extent: {x: 6.7204504, y: 6.72005, z: 0}
+    m_Center: {x: 0.00014996529, y: 0.00060009956, z: 0}
+    m_Extent: {x: 6.72025, y: 6.7199, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -1718,7 +1718,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b647c3290b37174449261e22925553b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clickSound: {fileID: 0}
+  soundObject: {fileID: 0}
   sceneName: "\u8D70\u5ECA1F"
   closeEyesAnimationObject: {fileID: 151048257}
 --- !u!114 &209339583
@@ -1904,9 +1904,10 @@ GameObject:
   - component: {fileID: 231927505}
   - component: {fileID: 231927504}
   - component: {fileID: 231927502}
-  - component: {fileID: 231927508}
   - component: {fileID: 231927501}
   - component: {fileID: 231927509}
+  - component: {fileID: 231927510}
+  - component: {fileID: 231927511}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -2086,23 +2087,6 @@ Transform:
   - {fileID: 1976733964}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
---- !u!114 &231927508
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 231927499}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: db727a58e6e40f543b6964cd535a574f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 4
-  isClothed: 0
-  canMove: 1
-  minX: -39
-  maxX: -10
 --- !u!114 &231927509
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2116,6 +2100,38 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 0}
+--- !u!114 &231927510
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 231927499}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d9aa66a297535c4aa517d93ef3ac810, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 4
+  canMove: 1
+  minX: -12
+  maxX: 30
+  ClothedScript: {fileID: 231927511}
+--- !u!114 &231927511
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 231927499}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42839d2ce80e6704e8c54d7a78a165d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canMove: 1
+  minX: -12
+  maxX: 30
 --- !u!1 &232827505
 GameObject:
   m_ObjectHideFlags: 0
@@ -2580,8 +2596,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.00049996376, y: 0.00020003319, z: 0}
-    m_Extent: {x: 6.7202997, y: 6.7201996, z: 0}
+    m_Center: {x: 0.00029993057, y: -0.00020003319, z: 0}
+    m_Extent: {x: 6.7204, y: 6.7208004, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -3721,7 +3737,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scriptsToDisable:
-  - {fileID: 231927508}
+  - {fileID: 0}
 --- !u!82 &446981013
 AudioSource:
   m_ObjectHideFlags: 0
@@ -4297,7 +4313,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scriptsToDisable:
-  - {fileID: 231927508}
+  - {fileID: 0}
 --- !u!82 &487018519
 AudioSource:
   m_ObjectHideFlags: 0
@@ -7078,7 +7094,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scriptsToDisable:
-  - {fileID: 231927508}
+  - {fileID: 0}
 --- !u!82 &875926277
 AudioSource:
   m_ObjectHideFlags: 0
@@ -9363,8 +9379,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.00040006638, y: 0.00040006638, z: 0}
-    m_Extent: {x: 6.7197, y: 6.7202, z: 0}
+    m_Center: {x: 0.00064992905, y: -0.00045013428, z: 0}
+    m_Extent: {x: 6.72025, y: 6.72015, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -9658,7 +9674,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scriptsToDisable:
-  - {fileID: 231927508}
+  - {fileID: 0}
 --- !u!82 &1120606567
 AudioSource:
   m_ObjectHideFlags: 0
@@ -10012,8 +10028,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.0001001358, y: 0.00044989586, z: 0}
-    m_Extent: {x: 6.7205, y: 6.7196503, z: 0}
+    m_Center: {x: -0.00044989586, y: 0.00049996376, z: 0}
+    m_Extent: {x: 6.7199497, y: 6.7202997, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -10370,8 +10386,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.00014996529, y: -0.00074982643, z: 0}
-    m_Extent: {x: 6.7206497, y: 6.7199497, z: 0}
+    m_Center: {x: -0.000099897385, y: -0.00049996376, z: 0}
+    m_Extent: {x: 6.7207003, y: 6.7201004, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -11200,7 +11216,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scriptsToDisable:
-  - {fileID: 231927508}
+  - {fileID: 0}
 --- !u!82 &1303609912
 AudioSource:
   m_ObjectHideFlags: 0
@@ -12469,7 +12485,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scriptsToDisable:
-  - {fileID: 231927508}
+  - {fileID: 0}
 --- !u!82 &1408394776
 AudioSource:
   m_ObjectHideFlags: 0
@@ -15819,8 +15835,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.000099897385, y: -0.00069999695, z: 0}
-    m_Extent: {x: 5.9405003, y: 5.9403, z: 0}
+    m_Center: {x: 0.000049829483, y: 0.00034999847, z: 0}
+    m_Extent: {x: 5.9397497, y: 5.93975, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0

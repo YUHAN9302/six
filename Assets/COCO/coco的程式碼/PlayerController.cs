@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rb; // 2D 物理剛體
     public float moveSpeed = 4f; // 移動速度
 
-    public bool isClothed = false;
+   static public bool isClothed = false;
     public bool canMove = true; // 是否允許移動
     private bool isWalking = false;
     private bool isRight = true;
@@ -17,22 +17,31 @@ public class PlayerController : MonoBehaviour
     public float maxX = 13f;  // 右邊界
 
     public Clothed ClothedScript;
-    public float direction =-1;
+    static public float direction;
+    void Awakej()
+    {
+
+       
+    }
     // Start is called before the first frame update
     void Start()
     {
 
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
-
-        animator.SetBool("isClothed", false);
+        // 方向動畫（原有邏輯）
+        if (direction == -1)
+            animator.SetBool("isRight", true);
+        if (direction == 1)
+            animator.SetBool("isRight", false);
+        animator.SetBool("isClothed", isClothed);
     
     }
 
     // Update is called once per frame
     void Update()
     {
-       
+        Debug.Log("direction:" + direction);
         /*  if (!canMove)
           {
               rb.velocity = new Vector2(0, rb.velocity.y); // 停止移動
@@ -74,6 +83,8 @@ public class PlayerController : MonoBehaviour
         {
             isWalking = true;
             isRight = false;
+            animator.SetBool("isRight", isRight);
+
             direction = 1;
             moveX = moveSpeed;
 
@@ -84,6 +95,8 @@ public class PlayerController : MonoBehaviour
         {
             isWalking = true;
             isRight = true;
+            animator.SetBool("isRight", isRight);
+
             direction = -1;
             moveX = -moveSpeed;
 
@@ -95,7 +108,6 @@ public class PlayerController : MonoBehaviour
         }
 
         animator.SetBool("isWalking", isWalking);
-        animator.SetBool("isRight", isRight);
 
         // 移動角色
         //rb.velocity = new Vector2(moveX, rb.velocity.y);

@@ -330,7 +330,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scriptsToDisable:
-  - {fileID: 231927508}
+  - {fileID: 0}
 --- !u!82 &110527473
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1756,9 +1756,10 @@ GameObject:
   - component: {fileID: 231927505}
   - component: {fileID: 231927504}
   - component: {fileID: 231927502}
-  - component: {fileID: 231927508}
   - component: {fileID: 231927509}
   - component: {fileID: 231927501}
+  - component: {fileID: 231927510}
+  - component: {fileID: 231927511}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -1938,23 +1939,6 @@ Transform:
   - {fileID: 1976733964}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
---- !u!114 &231927508
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 231927499}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: db727a58e6e40f543b6964cd535a574f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 4
-  isClothed: 0
-  canMove: 1
-  minX: -12
-  maxX: 13
 --- !u!114 &231927509
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1968,6 +1952,38 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 0}
+--- !u!114 &231927510
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 231927499}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42839d2ce80e6704e8c54d7a78a165d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canMove: 1
+  minX: -12
+  maxX: 30
+--- !u!114 &231927511
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 231927499}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d9aa66a297535c4aa517d93ef3ac810, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 4
+  canMove: 1
+  minX: -12
+  maxX: 30
+  ClothedScript: {fileID: 231927510}
 --- !u!1 &260992065
 GameObject:
   m_ObjectHideFlags: 0
@@ -2176,8 +2192,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0, y: -0.0000500679, z: 0}
-    m_Extent: {x: 6.7202, y: 6.71985, z: 0}
+    m_Center: {x: 0.00044989586, y: 0.000099897385, z: 0}
+    m_Extent: {x: 6.7203503, y: 6.7202997, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -3164,7 +3180,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scriptsToDisable:
-  - {fileID: 231927508}
+  - {fileID: 0}
 --- !u!82 &446981013
 AudioSource:
   m_ObjectHideFlags: 0
@@ -6024,8 +6040,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.00034999847, y: 0, z: 0}
-    m_Extent: {x: 6.71955, y: 6.7201, z: 0}
+    m_Center: {x: 0, y: 0, z: 0}
+    m_Extent: {x: 6.7209, y: 6.7208, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -6245,7 +6261,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scriptsToDisable:
-  - {fileID: 231927508}
+  - {fileID: 0}
 --- !u!82 &1120606567
 AudioSource:
   m_ObjectHideFlags: 0
@@ -6835,8 +6851,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.00040006638, y: -0.0000500679, z: 0}
-    m_Extent: {x: 6.7205, y: 6.72095, z: 0}
+    m_Center: {x: 0.00020003319, y: 0.00040006638, z: 0}
+    m_Extent: {x: 6.7202997, y: 6.7202, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -7848,7 +7864,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scriptsToDisable:
-  - {fileID: 231927508}
+  - {fileID: 0}
 --- !u!82 &1303609912
 AudioSource:
   m_ObjectHideFlags: 0
@@ -12031,8 +12047,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.000099897385, y: 0.00039982796, z: 0}
-    m_Extent: {x: 5.9393997, y: 5.9400997, z: 0}
+    m_Center: {x: 0.00040006638, y: -0.00020003319, z: 0}
+    m_Extent: {x: 5.94, y: 5.9406996, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0

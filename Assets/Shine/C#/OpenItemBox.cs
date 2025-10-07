@@ -34,7 +34,7 @@ public class OpenItemBox : MonoBehaviour
         }
 
         // 新版 API：位置、角度、時間、道具
-        var (_, _, _, items) = saveMgr.LoadPlayerState(SetAndGetSaveData.SelectID);
+        var (_, _, _, items, _) = saveMgr.LoadPlayerState(SetAndGetSaveData.SelectID);
 
         if (items == null)
             items = new List<string>();
