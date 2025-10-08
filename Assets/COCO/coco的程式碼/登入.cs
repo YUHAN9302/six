@@ -44,6 +44,8 @@ public class 登入 : MonoBehaviour
     }
     public void second()
     {
+        PlayerController.direction = -1;
+        PlayerController.isClothed = false;
 
         SetAndGetSaveData.SelectID = 0;
         StartCoroutine(PlayAnimationAndLoadScene());

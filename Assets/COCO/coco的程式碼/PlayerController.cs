@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rb; // 2D 物理剛體
     public float moveSpeed = 4f; // 移動速度
 
-   static public bool isClothed = false;
+   static public bool isClothed;
     public bool canMove = true; // 是否允許移動
     private bool isWalking = false;
     private bool isRight = true;
@@ -18,23 +18,23 @@ public class PlayerController : MonoBehaviour
 
     public Clothed ClothedScript;
     static public float direction;
-    void Awakej()
+    void Awake()
     {
+        animator = GetComponent<Animator>();
+        rb = GetComponent<Rigidbody2D>();
+        animator.SetBool("isClothed", isClothed);
 
-       
     }
     // Start is called before the first frame update
     void Start()
     {
 
-        animator = GetComponent<Animator>();
-        rb = GetComponent<Rigidbody2D>();
+
         // 方向動畫（原有邏輯）
         if (direction == -1)
             animator.SetBool("isRight", true);
         if (direction == 1)
             animator.SetBool("isRight", false);
-        animator.SetBool("isClothed", isClothed);
     
     }
 
