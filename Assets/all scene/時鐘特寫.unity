@@ -6474,8 +6474,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9dd26116ce80abe43b8f1700447cd215, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minuteStepDegree: 6
-  hourStepDegree: 30
+  minuteStepDegree: -6
+  hourStepDegree: -30
 --- !u!4 &1918837885
 Transform:
   m_ObjectHideFlags: 0
