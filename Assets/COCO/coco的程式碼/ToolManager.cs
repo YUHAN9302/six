@@ -10,6 +10,7 @@ public class ToolManager : MonoBehaviour
     public ToolDrag needle;       // °w
     public ToolDrag thread;       // ½u
     public ToolDrag needleThread; // °w½u
+    public ToolDrag scissor;      // °Å¤M
 
     void Awake()
     {
@@ -20,7 +21,7 @@ public class ToolManager : MonoBehaviour
     {
         string name = tool.toolName;
 
-        if (name == "°w" || name == "½u" || name == "°w½u" || name == "¶s¦©" || name == "¥¬®Æ")
+        if (name == "°w" || name == "½u" || name == "°w½u" || name == "¶s¦©" || name == "¥¬®Æ" || name == "°Å¤M")
         {
             target.OnToolDropped(tool);
         }

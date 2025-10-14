@@ -3,11 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+
 
 public class TargetItem : MonoBehaviour
 {
     public Image dollImage;
-    public Sprite state0, state1, state2, finalState;
+    public Sprite state0, state1, state2, finalState, cutMouthState; // ✅ 新增 cutMouthState
+
     public RectTransform needleThreadTargetPos;
     private Vector2 needleThreadStartPos;
 
@@ -19,14 +22,28 @@ public class TargetItem : MonoBehaviour
     public RectTransform buttonTargetPos; // 鈕扣固定位置
     public GameObject cloth;        // 布料
 
+    public GameObject scissor;      // 剪刀（初始隱藏）
+    public GameObject dialoguePanel; // ✅ 對話框（初始關閉）
+
+
     [HideInInspector] public bool fixedEyes = false;
     [HideInInspector] public bool changedClothes = false;
     [HideInInspector] public bool buttonPlaced = false;
+    [HideInInspector] public bool canUseScissor = false; // 是否可以使用剪刀
+
+
+
+    private bool dialogueShown = false; // ✅ 確保對話框只顯示一次
+
 
     void Start()
     {
         dollImage.sprite = state0;
         needleThread.SetActive(false);
+
+        if (scissor != null) scissor.SetActive(false);
+        if (dialoguePanel != null) dialoguePanel.SetActive(false);
+
 
         // 記錄針線初始位置
         RectTransform rt = needleThread.GetComponent<RectTransform>();
@@ -40,9 +57,28 @@ public class TargetItem : MonoBehaviour
         bool success = false;
 
         // -------------------
+        // 剪刀先判斷
+        // -------------------
+        if (name == "剪刀")
+        {
+            if (canUseScissor)
+            {
+                dollImage.sprite = cutMouthState;
+                tool.gameObject.SetActive(false);
+                StartCoroutine(BackToRoomAfterDelay(2f));
+                success = true;
+            }
+            else
+            {
+                tool.ResetPosition();
+                success = false;
+            }
+        }
+
+        // -------------------
         // 針 + 線 → 針線
         // -------------------
-        if ((name == "針" && thread.activeSelf) || (name == "線" && needle.activeSelf))
+        else if((name == "針" && thread.activeSelf) || (name == "線" && needle.activeSelf))
         {
             needle.SetActive(false);
             thread.SetActive(false);
@@ -94,6 +130,12 @@ public class TargetItem : MonoBehaviour
                 fixedEyes = true;
                 dollImage.sprite = changedClothes ? finalState : state1;
                 success = true;
+
+                // ✅ 若修眼睛也完成 → 最終型態
+                if (fixedEyes && changedClothes)
+                    if (dialoguePanel != null && !dialoguePanel.activeSelf)
+                        dialoguePanel.SetActive(true);
+
             }
             else
             {
@@ -118,11 +160,47 @@ public class TargetItem : MonoBehaviour
             dollImage.sprite = fixedEyes ? finalState : state2;
             cloth.SetActive(false);
             success = true;
+
+            // ✅ 若修眼睛也完成 → 最終型態
+            if (fixedEyes && changedClothes)
+                if (dialoguePanel != null && !dialoguePanel.activeSelf)
+                    dialoguePanel.SetActive(true);
+
         }
 
         if (!success)
         {
             tool.ResetPosition(); // 互動失敗回原位
         }
+       
+
+        if (!success)
+        {
+            tool.ResetPosition();
+        }
+    }
+
+    // -------------------
+    // 對話結束時呼叫
+    // -------------------
+    public void OnDialogueEnd()
+    {
+        if (dialoguePanel != null)
+            dialoguePanel.SetActive(false);
+
+        // 顯示剪刀
+        if (scissor != null)
+        {
+            scissor.SetActive(true);
+            canUseScissor = true;
+        }
+    }
+
+    // ✅ 剪嘴後延遲切換場景
+    IEnumerator BackToRoomAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        SceneManager.LoadScene("妹妹房間"); // 改成你的房間場景名稱
     }
 }
+

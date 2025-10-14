@@ -35,4 +35,7 @@ EditorBuildSettings:
   - enabled: 1
     path: "Assets/all scene/\u59B9\u59B9\u623F\u9593.unity"
     guid: d7da21de65ae9ef4197a232a238847ff
+  - enabled: 1
+    path: "Assets/all scene/\u4FEE\u88DC\u5A03\u5A03.unity"
+    guid: 4559869829cb2024d91d9ffb1330d6e9
   m_configObjects: {}
