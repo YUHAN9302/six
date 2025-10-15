@@ -3531,7 +3531,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 0
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!224 &1431360403
 RectTransform:
@@ -4490,7 +4490,9 @@ MonoBehaviour:
   contentText: {fileID: 1014128697}
   nextButton: {fileID: 418679092}
   currentLine: 0
-  CloseObj: {fileID: 0}
+  CloseObj: []
+  OpenObj: []
+  NextIteams: []
   dialogueImage: {fileID: 2095812884}
   dialogueImageBig: {fileID: 1711467612}
   audioSource: {fileID: 1874235728}

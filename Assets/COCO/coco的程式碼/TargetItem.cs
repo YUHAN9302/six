@@ -14,7 +14,7 @@ public class TargetItem : MonoBehaviour
     public RectTransform needleThreadTargetPos;
     private Vector2 needleThreadStartPos;
 
-
+    [Header("工具與固定位置")]
     public GameObject needle;       // 針
     public GameObject thread;       // 線
     public GameObject needleThread; // 針線（初始隱藏）
@@ -24,7 +24,11 @@ public class TargetItem : MonoBehaviour
 
     public GameObject scissor;      // 剪刀（初始隱藏）
     public GameObject dialoguePanel; // ✅ 對話框（初始關閉）
+    public GameObject closeEyesAnimationObject;
 
+    [Header("互動音效物件")]
+    public GameObject clothSoundObj;
+    public GameObject scissorSoundObj;
 
     [HideInInspector] public bool fixedEyes = false;
     [HideInInspector] public bool changedClothes = false;
@@ -156,6 +160,7 @@ public class TargetItem : MonoBehaviour
         // -------------------
         else if (name == "布料" && !changedClothes)
         {
+            PlaySoundObject(clothSoundObj);
             changedClothes = true;
             dollImage.sprite = fixedEyes ? finalState : state2;
             cloth.SetActive(false);
@@ -195,12 +200,40 @@ public class TargetItem : MonoBehaviour
             canUseScissor = true;
         }
     }
+    private void PlaySoundObject(GameObject soundObj)
+    {
+        if (soundObj != null)
+            StartCoroutine(PlaySoundCoroutine(soundObj));
+    }
+
+    private IEnumerator PlaySoundCoroutine(GameObject soundObj)
+    {
+        soundObj.SetActive(true);
+        yield return new WaitForSeconds(2f); // 播放音效持續時間，可自行調整
+        soundObj.SetActive(false);
+    }
+
 
     // ✅ 剪嘴後延遲切換場景
     IEnumerator BackToRoomAfterDelay(float delay)
     {
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        if (player != null)
+            位置紀錄.SetPosition(player.transform.position);
+
+        if (closeEyesAnimationObject != null)
+        {
+            closeEyesAnimationObject.SetActive(true);
+            Animator anim = closeEyesAnimationObject.GetComponent<Animator>();
+            if (anim != null)
+            {
+                anim.SetTrigger("CloseEyes");
+                yield return new WaitForSeconds(1f);
+            }
+        }
+
         yield return new WaitForSeconds(delay);
-        SceneManager.LoadScene("妹妹房間"); // 改成你的房間場景名稱
+        SceneManager.LoadScene("妹妹房間");
     }
 }
 

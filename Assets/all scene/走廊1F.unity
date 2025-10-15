@@ -605,7 +605,10 @@ MonoBehaviour:
   contentText: {fileID: 1801242613}
   nextButton: {fileID: 1971511497}
   currentLine: 0
-  CloseObj: {fileID: 0}
+  CloseObj:
+  - {fileID: 0}
+  OpenObj: []
+  NextIteams: []
   dialogueImage: {fileID: 1772021514}
   dialogueImageBig: {fileID: 0}
   audioSource: {fileID: 110527473}
@@ -2469,8 +2472,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.00049996376, y: -0.0001502037, z: 0}
-    m_Extent: {x: 6.7202997, y: 6.72085, z: 0}
+    m_Center: {x: 0.00014996529, y: 0, z: 0}
+    m_Extent: {x: 6.72075, y: 6.7203, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -3772,7 +3775,10 @@ MonoBehaviour:
   contentText: {fileID: 1060372396}
   nextButton: {fileID: 261742414}
   currentLine: 0
-  CloseObj: {fileID: 0}
+  CloseObj:
+  - {fileID: 0}
+  OpenObj: []
+  NextIteams: []
   dialogueImage: {fileID: 2078862977}
   dialogueImageBig: {fileID: 0}
   audioSource: {fileID: 446981013}
@@ -7481,8 +7487,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.00044989586, y: 0.00044989586, z: 0}
-    m_Extent: {x: 6.7203503, y: 6.72025, z: 0}
+    m_Center: {x: -0.00055003166, y: 0.000300169, z: 0}
+    m_Extent: {x: 6.72005, y: 6.7202997, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -7833,7 +7839,10 @@ MonoBehaviour:
   contentText: {fileID: 851669120}
   nextButton: {fileID: 1294650259}
   currentLine: 0
-  CloseObj: {fileID: 0}
+  CloseObj:
+  - {fileID: 0}
+  OpenObj: []
+  NextIteams: []
   dialogueImage: {fileID: 1884288830}
   dialogueImageBig: {fileID: 0}
   audioSource: {fileID: 1120606567}
@@ -8150,8 +8159,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.00060009956, y: 0.00034999847, z: 0}
-    m_Extent: {x: 6.7200003, y: 6.72045, z: 0}
+    m_Center: {x: -0.00049996376, y: -0.00014996529, z: 0}
+    m_Extent: {x: 6.7201996, y: 6.7199497, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -9653,7 +9662,10 @@ MonoBehaviour:
   contentText: {fileID: 1181399421}
   nextButton: {fileID: 1550883755}
   currentLine: 0
-  CloseObj: {fileID: 0}
+  CloseObj:
+  - {fileID: 0}
+  OpenObj: []
+  NextIteams: []
   dialogueImage: {fileID: 108281668}
   dialogueImageBig: {fileID: 0}
   audioSource: {fileID: 1303609912}
@@ -9933,7 +9945,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 0
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!224 &1367982755
 RectTransform:
@@ -14800,8 +14812,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.0002501011, y: -0.0001502037, z: 0}
-    m_Extent: {x: 5.94055, y: 5.94065, z: 0}
+    m_Center: {x: -0.000300169, y: -0.0000500679, z: 0}
+    m_Extent: {x: 5.9400997, y: 5.94055, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0

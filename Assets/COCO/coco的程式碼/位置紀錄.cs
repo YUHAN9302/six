@@ -10,6 +10,8 @@ public class 位置紀錄 : MonoBehaviour
     public static Vector3? LastPosition = null;
     public static string LastAnimState = null; // 新增：最後播放的動畫狀態名稱
 
+    // ✅ 新增：紀錄互動過的物件
+    private static HashSet<string> interactedObjects = new HashSet<string>();
 
     void Awake()
     {
@@ -47,5 +49,23 @@ public class 位置紀錄 : MonoBehaviour
     public static string GetAnimState()
     {
         return LastAnimState;
+    }
+    // ---------- 互動物件 ----------
+    public static void AddInteraction(string name)
+    {
+        if (!interactedObjects.Contains(name))
+            interactedObjects.Add(name);
+    }
+
+    public static bool HasInteracted(string name)
+    {
+        return interactedObjects.Contains(name);
+    }
+
+    public static void ResetAll()
+    {
+        LastPosition = null;
+        LastAnimState = null;
+        interactedObjects.Clear();
     }
 }

@@ -47,19 +47,19 @@ public class 進入修補娃娃 : MonoBehaviour
 
     IEnumerator PlayCloseEyesAndChangeScene()
     {
-        // 播放閉眼動畫
-        if (closeEyesAnimationObject != null)
-        {
-            closeEyesAnimationObject.SetActive(true);
-            Animator animator = closeEyesAnimationObject.GetComponent<Animator>();
-            if (animator != null)
-                animator.SetTrigger("CloseEyes");
-        }
+        // ...（原本動畫部分）
 
-        // 等待動畫時間（假設 1 秒，你可依動畫長度調整）
         yield return new WaitForSeconds(1f);
 
-        // 切換場景
+        // ✅ 儲存角色位置與動畫
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        if (player != null)
+        {
+            var posScript = player.GetComponent<人物位置>();
+            if (posScript != null)
+                posScript.SaveCurrentTransform(); // 記錄位置 + 動畫
+        }
+
         SceneManager.LoadScene("修補娃娃");
     }
 }
