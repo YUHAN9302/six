@@ -49,7 +49,7 @@ public class 進入修補娃娃 : MonoBehaviour
     {
         // ...（原本動畫部分）
 
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(1.4f);
 
         // ✅ 儲存角色位置與動畫
         GameObject player = GameObject.FindGameObjectWithTag("Player");

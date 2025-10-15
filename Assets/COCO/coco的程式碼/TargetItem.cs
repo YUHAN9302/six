@@ -27,6 +27,10 @@ public class TargetItem : MonoBehaviour
     public GameObject closeEyesAnimationObject;
 
     [Header("互動音效物件")]
+    public GameObject needleSoundObj;
+    public GameObject threadSoundObj;
+    public GameObject needleThreadSoundObj;
+    public GameObject buttonSoundObj;
     public GameObject clothSoundObj;
     public GameObject scissorSoundObj;
 
@@ -67,6 +71,7 @@ public class TargetItem : MonoBehaviour
         {
             if (canUseScissor)
             {
+                PlaySoundObject(scissorSoundObj);
                 dollImage.sprite = cutMouthState;
                 tool.gameObject.SetActive(false);
                 StartCoroutine(BackToRoomAfterDelay(2f));
@@ -84,6 +89,7 @@ public class TargetItem : MonoBehaviour
         // -------------------
         else if((name == "針" && thread.activeSelf) || (name == "線" && needle.activeSelf))
         {
+            PlaySoundObject(needleThreadSoundObj);
             needle.SetActive(false);
             thread.SetActive(false);
 
@@ -110,6 +116,7 @@ public class TargetItem : MonoBehaviour
             if (RectTransformUtility.RectangleContainsScreenPoint(dollRT, buttonRT.position))
             {
                 // 成功放置 → 固定位置
+                PlaySoundObject(buttonSoundObj);
                 buttonPlaced = true;
                 buttonRT.anchoredPosition = buttonTargetPos.anchoredPosition;
                 success = true;
@@ -129,6 +136,7 @@ public class TargetItem : MonoBehaviour
             if (buttonPlaced)
             {
                 // 成功互動
+                PlaySoundObject(needleThreadSoundObj);
                 needleThread.SetActive(false);
                 button.SetActive(false);
                 fixedEyes = true;
