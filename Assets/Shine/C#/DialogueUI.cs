@@ -11,8 +11,11 @@ public class DialogueUI : MonoBehaviour
 
     public int currentLine = 0;
     [Header("對話結束 一同要關閉的物件")]
-    public GameObject CloseObj;
-
+    public GameObject[] CloseObj;
+    [Header("對話結束 一同要開啟的物件")]
+    public GameObject[] OpenObj;
+    [Header("該對話結束以後可以找尋的物品")]
+    public GameObject[] NextIteams;
     public Image dialogueImage;
     public Image dialogueImageBig;   // F欄：對話大圖
     public AudioSource audioSource;
@@ -43,9 +46,29 @@ public class DialogueUI : MonoBehaviour
         }
         else
         {
+            if (NextIteams.Length > 0)
+            {
+                for (int i = 0; i < NextIteams.Length; i++)
+                {
+                    NextIteams[i].AddComponent<BoxCollider2D>();
+                    NextIteams[i].GetComponent<BoxCollider2D>().isTrigger = true;
+                }
+            }
             gameObject.SetActive(false);
-            if (CloseObj != null)
-                CloseObj.SetActive(false);
+            if (CloseObj.Length > 0)
+            {
+                for (int i = 0; i < CloseObj.Length; i++)
+                {
+                    CloseObj[i].SetActive(false);
+                }
+            }
+            if (OpenObj.Length > 0)
+            {
+                for (int i = 0; i < OpenObj.Length; i++)
+                {
+                    OpenObj[i].SetActive(true);
+                }
+            }
         }
     }
 

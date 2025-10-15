@@ -1,30 +1,27 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class OpenItemBox : MonoBehaviour
 {
     [Tooltip("5 個圖片欄位（每格的第 0 個子物件會被顯示/隱藏）")]
-    public GameObject[] itemImages;   // 5 格 UI 容器
+    public GameObject[] itemImages;
+
     [Tooltip("對應每格的資訊視窗/說明面板")]
-    public GameObject[] itemInfo;     // 5 個資訊面板
+    public GameObject[] itemInfo;
 
     private const int SLOT_COUNT = 5;
 
     private void OnEnable()
     {
-        // 基本防呆
-        if (itemImages == null || itemImages.Length == 0)
-            return;
 
-        // 未選擇存檔：全部關閉
+
         if (SetAndGetSaveData.SelectID == 0)
         {
             ToggleAllSlots(false);
             return;
         }
-
-        // 讀取對應存檔的道具
         var saveMgr = FindObjectOfType<SaveManager>();
         if (saveMgr == null)
         {
@@ -33,38 +30,51 @@ public class OpenItemBox : MonoBehaviour
             return;
         }
 
-        // 新版 API：位置、角度、時間、道具
         var (_, _, _, items, _) = saveMgr.LoadPlayerState(SetAndGetSaveData.SelectID);
-
         if (items == null)
             items = new List<string>();
 
-        // 確保長度至少 5（不足補空字串）
         while (items.Count < SLOT_COUNT)
             items.Add(string.Empty);
 
-        // 逐格更新顯示
         for (int i = 0; i < itemImages.Length; i++)
         {
-            // 如果 UI 陣列比 5 多或少，也不會爆
-            bool hasItem = (i < items.Count) && !string.IsNullOrEmpty(items[i]);
-
             var slot = itemImages[i];
             if (slot == null) continue;
 
-            // 第 0 個子物件視為「物品圖示」
+            string itemName = (i < items.Count) ? items[i] : "";
+            bool hasItem = !string.IsNullOrEmpty(itemName);
+
             if (slot.transform.childCount > 0)
             {
                 var icon = slot.transform.GetChild(0).gameObject;
                 if (icon != null)
+                {
                     icon.SetActive(hasItem);
+
+                    if (hasItem)
+                    {
+                        var image = icon.GetComponent<Image>();
+                        if (image != null)
+                        {
+                            Sprite itemSprite = LoadIconSpriteForItem(itemName);
+                            if (itemSprite != null)
+                            {
+                                image.sprite = itemSprite;
+                            }
+                            else
+                            {
+                                Debug.LogWarning($"找不到對應圖片：{itemName}");
+                            }
+                        }
+                    }
+                }
             }
         }
+
+        Debug.Log("[OpenItemBox] 目前道具：" + string.Join(",", items));
     }
 
-    /// <summary>
-    /// 點擊某格，若該格有物品則打開對應的資訊面板
-    /// </summary>
     public void OpenItemInfo(int id)
     {
         if (itemImages == null || itemInfo == null) return;
@@ -73,7 +83,6 @@ public class OpenItemBox : MonoBehaviour
         var slot = itemImages[id];
         if (slot == null) return;
 
-        // 檢查第 0 個子物件（物品圖示）目前是否顯示
         if (slot.transform.childCount > 0)
         {
             var icon = slot.transform.GetChild(0).gameObject;
@@ -85,9 +94,6 @@ public class OpenItemBox : MonoBehaviour
         }
     }
 
-    /// <summary>
-    /// 把所有格子的圖示關閉（或打開）
-    /// </summary>
     private void ToggleAllSlots(bool enable)
     {
         for (int i = 0; i < itemImages.Length; i++)
@@ -100,6 +106,26 @@ public class OpenItemBox : MonoBehaviour
                 var icon = slot.transform.GetChild(0).gameObject;
                 if (icon != null) icon.SetActive(enable);
             }
+        }
+    }
+
+    /// <summary>
+    /// 根據道具名稱載入對應圖示（需放在 Resources/Icons 目錄）
+    /// </summary>
+    private Sprite LoadIconSpriteForItem(string itemName)
+    {
+        // 對應道具名稱與圖片檔名
+        switch (itemName)
+        {
+            case "書本":
+                return Resources.Load<Sprite>("Icons/book");
+            case "信件":
+                return Resources.Load<Sprite>("Icons/letter");
+            case "玩偶":
+                return Resources.Load<Sprite>("Icons/doll");
+            // 可繼續擴充
+            default:
+                return null;
         }
     }
 }

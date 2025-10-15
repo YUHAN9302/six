@@ -56,31 +56,39 @@ public class SetAndGetSaveData : MonoBehaviour
     {
         if (scene.name != "0228") return;
 
-        SceneManager.sceneLoaded -= OnSceneLoaded; // 只執行一次
+        SceneManager.sceneLoaded -= OnSceneLoaded;
 
         var saveManager = FindObjectOfType<SaveManager>();
-        // 讀出 isClothed
-        var (loadedPosition, moveSpeed, saveTime, _, isClothed) = saveManager.LoadPlayerState(SelectID);
+        var (loadedPosition, moveSpeed, saveTime, items, isClothed) = saveManager.LoadPlayerState(SelectID);
 
-        // 更新 SaveManager 的快取
         saveManager.PlayerPos = loadedPosition;
         saveManager.PlayerMoveSpeed = moveSpeed;
 
-        // 套用到 Player
         var player = GameObject.Find("Player")?.GetComponent<PlayerController>();
         if (player != null)
         {
             player.transform.position = loadedPosition;
             PlayerController.direction = moveSpeed;
 
-            // 方向動畫（原有邏輯）
             if (PlayerController.direction == -1)
                 player.GetComponent<Animator>().SetBool("isRight", true);
             if (PlayerController.direction == 1)
                 player.GetComponent<Animator>().SetBool("isRight", false);
 
-            // 套用穿著狀態
             ApplyIsClothedToPlayer(player, isClothed);
+
+            // ✅ 還原道具狀態：關閉已撿取道具
+            foreach (string item in items)
+            {
+                if (item == "書本")
+                {
+                    var book = GameObject.Find("Book");
+                    if (book != null) book.SetActive(false);
+                }
+
+                // ➕ 若有其他道具，未來可加上：
+                // else if (item == "信件") { ... }
+            }
 
             Debug.Log($"✅ 玩家載入成功：位置 {loadedPosition}，速度 {moveSpeed}，isClothed={isClothed}，時間 {saveTime}");
         }
@@ -91,6 +99,7 @@ public class SetAndGetSaveData : MonoBehaviour
 
         gameObject.SetActive(false);
     }
+
 
     // === 存檔：位置 + 速度 + 穿著狀態 ===
     public void SaveDataPos(int ID)

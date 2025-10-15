@@ -487,7 +487,10 @@ MonoBehaviour:
   contentText: {fileID: 382043148}
   nextButton: {fileID: 509441464}
   currentLine: 0
-  CloseObj: {fileID: 1743999001}
+  CloseObj:
+  - {fileID: 1743999001}
+  OpenObj: []
+  NextIteams: []
   dialogueImage: {fileID: 789861268}
   dialogueImageBig: {fileID: 1239836633}
   audioSource: {fileID: 25075062}
@@ -1168,7 +1171,9 @@ MonoBehaviour:
   contentText: {fileID: 1445618410}
   nextButton: {fileID: 1056674202}
   currentLine: 0
-  CloseObj: {fileID: 0}
+  CloseObj: []
+  OpenObj: []
+  NextIteams: []
   dialogueImage: {fileID: 670072971}
   dialogueImageBig: {fileID: 1971001552}
   audioSource: {fileID: 84608158}
@@ -2798,7 +2803,9 @@ MonoBehaviour:
   contentText: {fileID: 1765782347}
   nextButton: {fileID: 877481631}
   currentLine: 0
-  CloseObj: {fileID: 0}
+  CloseObj: []
+  OpenObj: []
+  NextIteams: []
   dialogueImage: {fileID: 0}
   dialogueImageBig: {fileID: 1440244236}
   audioSource: {fileID: 244912717}
@@ -3311,8 +3318,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.0000500679, y: -0.00040006638, z: 0}
-    m_Extent: {x: 6.71935, y: 6.7201, z: 0}
+    m_Center: {x: 0.00029993057, y: 0.00049996376, z: 0}
+    m_Extent: {x: 6.7206, y: 6.7199, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -4690,7 +4697,10 @@ MonoBehaviour:
   contentText: {fileID: 2052357166}
   nextButton: {fileID: 570465885}
   currentLine: 0
-  CloseObj: {fileID: 1225623054}
+  CloseObj:
+  - {fileID: 1225623054}
+  OpenObj: []
+  NextIteams: []
   dialogueImage: {fileID: 225567251}
   dialogueImageBig: {fileID: 129612778}
   audioSource: {fileID: 452552315}
@@ -11683,8 +11693,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.00020003319, y: -0.00049996376, z: 0}
-    m_Extent: {x: 6.7206, y: 6.7199, z: 0}
+    m_Center: {x: 0, y: -0.00014996529, z: 0}
+    m_Extent: {x: 6.7205, y: 6.7203503, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -15133,6 +15143,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bookAnimation: {fileID: 1225623054}
   animationDuration: 2
+  bookName: "\u66F8\u672C"
 --- !u!114 &1428587744
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15507,8 +15518,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.00090003014, y: 0.0001001358, z: 0}
-    m_Extent: {x: 5.9399004, y: 5.9406, z: 0}
+    m_Center: {x: 0.00029993057, y: -0.00034999847, z: 0}
+    m_Extent: {x: 5.9404, y: 5.94005, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -16176,7 +16187,9 @@ MonoBehaviour:
   contentText: {fileID: 1332840243}
   nextButton: {fileID: 758472302}
   currentLine: 0
-  CloseObj: {fileID: 0}
+  CloseObj: []
+  OpenObj: []
+  NextIteams: []
   dialogueImage: {fileID: 2123220403}
   dialogueImageBig: {fileID: 803243910}
   audioSource: {fileID: 1512057969}
@@ -16844,7 +16857,10 @@ MonoBehaviour:
   contentText: {fileID: 1284653819}
   nextButton: {fileID: 889310744}
   currentLine: 0
-  CloseObj: {fileID: 706972738}
+  CloseObj:
+  - {fileID: 706972738}
+  OpenObj: []
+  NextIteams: []
   dialogueImage: {fileID: 950656050}
   dialogueImageBig: {fileID: 355217708}
   audioSource: {fileID: 1580659394}
@@ -18411,7 +18427,9 @@ MonoBehaviour:
   contentText: {fileID: 270559104}
   nextButton: {fileID: 2116817808}
   currentLine: 0
-  CloseObj: {fileID: 0}
+  CloseObj: []
+  OpenObj: []
+  NextIteams: []
   dialogueImage: {fileID: 2101258819}
   dialogueImageBig: {fileID: 1598122721}
   audioSource: {fileID: 1693352387}
@@ -18857,7 +18875,9 @@ MonoBehaviour:
   contentText: {fileID: 1084373538}
   nextButton: {fileID: 1787443532}
   currentLine: 0
-  CloseObj: {fileID: 0}
+  CloseObj: []
+  OpenObj: []
+  NextIteams: []
   dialogueImage: {fileID: 1140496902}
   dialogueImageBig: {fileID: 1907642579}
   audioSource: {fileID: 1705992423}
@@ -19877,7 +19897,9 @@ MonoBehaviour:
   contentText: {fileID: 1540122392}
   nextButton: {fileID: 1461949138}
   currentLine: 0
-  CloseObj: {fileID: 1813809211}
+  CloseObj: []
+  OpenObj: []
+  NextIteams: []
   dialogueImage: {fileID: 977979417}
   dialogueImageBig: {fileID: 1946897064}
   audioSource: {fileID: 1765092047}

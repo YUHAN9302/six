@@ -41,7 +41,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("direction:" + direction);
+        //Debug.Log("direction:" + direction);
         /*  if (!canMove)
           {
               rb.velocity = new Vector2(0, rb.velocity.y); // 停止移動

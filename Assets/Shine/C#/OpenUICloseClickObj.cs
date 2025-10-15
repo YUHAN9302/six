@@ -19,6 +19,7 @@ public class OpenUICloseClickObj : MonoBehaviour
             }
         }
             for (int i = 0; i < Obj.Count; i++) {
+            if (Obj[i].GetComponent<Collider2D>())
             Obj[i].GetComponent<Collider2D>().enabled = false;
         }
 
@@ -27,7 +28,8 @@ public class OpenUICloseClickObj : MonoBehaviour
     {
         for (int i = 0; i < Obj.Count; i++)
         {
-            Obj[i].GetComponent<Collider2D>().enabled = true;
+            if (Obj[i].GetComponent<Collider2D>())
+                Obj[i].GetComponent<Collider2D>().enabled = true;
         }
     }
     
