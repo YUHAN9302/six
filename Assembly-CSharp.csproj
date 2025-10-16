@@ -73,8 +73,8 @@
     <Compile Include="Assets\COCO\coco的程式碼\進入修補娃娃.cs" />
     <Compile Include="Assets\Shine\C#\LoadObj.cs" />
     <Compile Include="Assets\Shine\C#\DialogueUI.cs" />
-    <Compile Include="Assets\COCO\coco的程式碼\BGM不中斷.cs" />
     <Compile Include="Assets\COCO\coco的程式碼\時鐘對話解鎖.cs" />
+    <Compile Include="Assets\COCO\coco的程式碼\BGM不中斷.cs" />
     <Compile Include="Assets\COCO\coco的程式碼\位置紀錄.cs" />
     <Compile Include="Assets\Shine\C#\OpenItemBox.cs" />
     <Compile Include="Assets\Samples\Universal RP\14.0.9\URP Package Samples\SharedAssets\Scripts\FirstPersonController.cs" />

@@ -217,7 +217,7 @@ public class TargetItem : MonoBehaviour
     private IEnumerator PlaySoundCoroutine(GameObject soundObj)
     {
         soundObj.SetActive(true);
-        yield return new WaitForSeconds(2f); // 播放音效持續時間，可自行調整
+        yield return new WaitForSeconds(3f); // 播放音效持續時間，可自行調整
         soundObj.SetActive(false);
     }
 
