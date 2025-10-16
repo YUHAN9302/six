@@ -89,7 +89,7 @@ public class TargetItem : MonoBehaviour
         // -------------------
         else if((name == "針" && thread.activeSelf) || (name == "線" && needle.activeSelf))
         {
-            PlaySoundObject(needleThreadSoundObj);
+            PlaySoundObject(needleSoundObj);
             needle.SetActive(false);
             thread.SetActive(false);
 
