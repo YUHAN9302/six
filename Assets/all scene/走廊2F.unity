@@ -632,8 +632,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.0001001358, y: -0.00024986267, z: 0}
-    m_Extent: {x: 6.7208, y: 6.72015, z: 0}
+    m_Center: {x: 0.00055003166, y: -0.00044989586, z: 0}
+    m_Extent: {x: 6.7203503, y: 6.7203503, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -2936,7 +2936,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 118}
-  m_SizeDelta: {x: 700, y: 505}
+  m_SizeDelta: {x: 800, y: 625}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &317055906
 MonoBehaviour:
@@ -3448,8 +3448,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.000300169, y: -0.00034999847, z: 0}
-    m_Extent: {x: 6.7207003, y: 6.72065, z: 0}
+    m_Center: {x: -0.00020003319, y: 0.00055003166, z: 0}
+    m_Extent: {x: 6.7201996, y: 6.72025, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -3912,8 +3912,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.00020003319, y: 0.0001001358, z: 0}
-    m_Extent: {x: 5.9400997, y: 5.9407, z: 0}
+    m_Center: {x: -0.00034999847, y: -0.00034999847, z: 0}
+    m_Extent: {x: 5.94035, y: 5.94065, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -3978,7 +3978,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 118}
-  m_SizeDelta: {x: 700, y: 505}
+  m_SizeDelta: {x: 800, y: 625}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &452494761
 MonoBehaviour:
@@ -4163,7 +4163,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 136}
-  m_SizeDelta: {x: 700, y: 505}
+  m_SizeDelta: {x: 800, y: 625}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &481015185
 MonoBehaviour:
@@ -10660,6 +10660,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bookAnimator: {fileID: 547040605}
   totalPages: 6
+  DiaryContents: []
 --- !u!114 &1247679023
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14374,8 +14375,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.000300169, y: -0.00020003319, z: 0}
-    m_Extent: {x: 6.7202997, y: 6.7207003, z: 0}
+    m_Center: {x: 0.00014996529, y: 0.0000500679, z: 0}
+    m_Extent: {x: 6.7206497, y: 6.72085, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
