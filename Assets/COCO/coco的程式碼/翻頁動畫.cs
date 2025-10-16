@@ -10,11 +10,27 @@ public class 翻頁動畫 : MonoBehaviour
     private bool isAnimating = false; // 防止連點
 
     private bool isClosed = false; // 標記是否已關書
-
+    public GameObject[] DiaryContents;
     void Start()
     {
+       
+    }
+    private void Update()
+    {
         // 初始打開日記動畫
+        //時間是8:20
+        if (ClockController.hours == 8 && ClockController.minutes == 20)
+        {
+            //第一頁
+            if (currentPage == 0) { 
+                DiaryContents[0].SetActive(true);
+        }
+        else
+        {
+                DiaryContents[0].SetActive(false);
 
+            }
+        }
     }
 
     public void OnBookClicked()
