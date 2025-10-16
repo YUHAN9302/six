@@ -11,6 +11,9 @@ public class 用餐劇情觸發 : MonoBehaviour
     private bool triggered = false;
     private static bool alreadyTriggered = false; // 靜態變數，跨場景保留狀態
 
+    //[Header("開場物件")]
+   // public 客廳開頭 開場物件;  // 指向開場物件
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (!triggered && !alreadyTriggered && collision.CompareTag("Player"))
@@ -18,6 +21,10 @@ public class 用餐劇情觸發 : MonoBehaviour
            
             triggered = true;
             alreadyTriggered = true; // 記錄已觸發
+
+            // ⭐ 刪除開場物件
+            //if (開場物件 != null)
+                //開場物件.DestroySelf(); // 使用客廳開場物件內的方法，會順便記錄 PlayerPrefs
 
             // 切換場景前保存位置與動畫
             FindObjectOfType<人物位置>().SaveCurrentTransform();

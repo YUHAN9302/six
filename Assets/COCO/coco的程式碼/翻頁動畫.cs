@@ -11,6 +11,9 @@ public class 翻頁動畫 : MonoBehaviour
 
     private bool isClosed = false; // 標記是否已關書
     public GameObject[] DiaryContents;
+
+    public float openDelay = 1.0f;// ⭐ 打開日記後延遲幾秒顯示內容（新增）
+
     void Start()
     {
        
@@ -22,15 +25,22 @@ public class 翻頁動畫 : MonoBehaviour
         if (ClockController.hours == 8 && ClockController.minutes == 20)
         {
             //第一頁
-            if (currentPage == 0) { 
-                DiaryContents[0].SetActive(true);
-        }
-        else
+            if (currentPage == 0)
+            {
+                StartCoroutine(ShowFirstPageAfterDelay()); // ⭐ 延遲顯示
+            }
+            else
         {
                 DiaryContents[0].SetActive(false);
 
             }
         }
+    }
+    // ⭐ 新增：延遲顯示第一頁
+    private IEnumerator ShowFirstPageAfterDelay()
+    {
+        yield return new WaitForSeconds(openDelay);
+        DiaryContents[0].SetActive(true);
     }
 
     public void OnBookClicked()
@@ -38,6 +48,12 @@ public class 翻頁動畫 : MonoBehaviour
         if (isAnimating) return;
 
         isAnimating = true;
+
+        // ⭐ 立即隱藏所有頁面文字
+        foreach (var page in DiaryContents)
+        {
+            page.SetActive(false);
+        }
 
         if (isClosed)
         {

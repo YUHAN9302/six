@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class 觸發劇情 : MonoBehaviour
 {
+    [Header("指定要刪除的物件")]
+    public GameObject targetObject; // 指向你要刪除的開場物件
+
     public string triggerKey; // 用來檢查是否已觸發，可用物件名
     private bool triggered = false;
 
@@ -17,11 +20,13 @@ public class 觸發劇情 : MonoBehaviour
             triggerKey = gameObject.name;
         }
 
-        // 如果已經觸發過，直接刪除物件
+        // 如果已經觸發過，直接刪除目標物件
         if (triggeredKeys.Contains(triggerKey) ||
             (TriggerManager.Instance != null && TriggerManager.Instance.IsObjectClicked(triggerKey)))
         {
-            Destroy(gameObject);
+            if (targetObject != null)
+                Destroy(targetObject);
+            // 觸發物件本身可以選擇保留或刪除，這裡保留
         }
     }
 
@@ -49,8 +54,12 @@ public class 觸發劇情 : MonoBehaviour
                 TriggerManager.Instance.RecordClick(triggerKey);
             }
 
+            // ⭐ 刪除指定目標物件
+            if (targetObject != null)
+                Destroy(targetObject);
+
             // 刪除物件
-            Destroy(gameObject);
+            //Destroy(gameObject);
         }
     }
 }
