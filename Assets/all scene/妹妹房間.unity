@@ -910,8 +910,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.00049996376, y: 0.0000500679, z: 0}
-    m_Extent: {x: 6.7202997, y: 6.71975, z: 0}
+    m_Center: {x: -0.00024986267, y: 0.0002501011, z: 0}
+    m_Extent: {x: 6.71985, y: 6.7206497, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -5242,8 +5242,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.00040006638, y: 0.00064992905, z: 0}
-    m_Extent: {x: 6.7202, y: 6.72015, z: 0}
+    m_Center: {x: -0.00040006638, y: -0.0001001358, z: 0}
+    m_Extent: {x: 6.7206, y: 6.7208, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -5943,8 +5943,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.00084996223, y: -0.000099897385, z: 0}
-    m_Extent: {x: 5.94005, y: 5.9397, z: 0}
+    m_Center: {x: 0.0001001358, y: 0.0000500679, z: 0}
+    m_Extent: {x: 5.9406, y: 5.94055, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -18369,6 +18369,7 @@ MonoBehaviour:
   currentLine: 0
   CloseObj:
   - {fileID: 763431463}
+  - {fileID: 622620024}
   OpenObj:
   - {fileID: 1284691616}
   NextIteams: []
@@ -22954,8 +22955,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.00020003319, y: 0.00069999695, z: 0}
-    m_Extent: {x: 6.7201004, y: 6.7202, z: 0}
+    m_Center: {x: 0.00034999847, y: -0.00045013428, z: 0}
+    m_Extent: {x: 6.72035, y: 6.71985, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -28866,7 +28867,7 @@ GameObject:
   - component: {fileID: 2028631114}
   - component: {fileID: 2028631113}
   m_Layer: 5
-  m_Name: "\u9053\u5177_\u5857\u9D09"
+  m_Name: "\u9053\u5177"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28911,7 +28912,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 8402ad1ea2c0f484cbcd4e2cea7b44fa, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
