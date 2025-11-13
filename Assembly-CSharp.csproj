@@ -89,12 +89,14 @@
     <Compile Include="Assets\COCO\coco的程式碼\BookAnimation.cs" />
     <Compile Include="Assets\COCO\coco的程式碼\退出特寫.cs" />
     <Compile Include="Assets\Shine\C#\Setting.cs" />
+    <Compile Include="Assets\COCO\coco的程式碼\關閉動畫物件.cs" />
     <Compile Include="Assets\Samples\Universal RP\14.0.9\URP Package Samples\RendererFeatures\DistortTunnel\DistortTunnelPass_Distort.cs" />
     <Compile Include="Assets\COCO\coco的程式碼\選轉UI顯示.cs" />
     <Compile Include="Assets\COCO\coco的程式碼\BOX.cs" />
     <Compile Include="Assets\COCO\coco的程式碼\鑰匙偵測.cs" />
     <Compile Include="Assets\Samples\Universal RP\14.0.9\URP Package Samples\SharedAssets\Scripts\AutoLoadPipelineAsset.cs" />
     <Compile Include="Assets\COCO\coco的程式碼\按鈕音效.cs" />
+    <Compile Include="Assets\COCO\coco的程式碼\進入下個洞.cs" />
     <Compile Include="Assets\COCO\coco的程式碼\到客廳.cs" />
     <Compile Include="Assets\COCO\coco的程式碼\鑰匙.cs" />
     <Compile Include="Assets\COCO\coco的程式碼\ClickableObject.cs" />
@@ -124,6 +126,7 @@
     <Compile Include="Assets\COCO\coco的程式碼\TargetItem.cs" />
     <Compile Include="Assets\COCO\coco的程式碼\ToolDrag.cs" />
     <Compile Include="Assets\Samples\Universal RP\14.0.9\URP Package Samples\RendererFeatures\DistortTunnel\DistortTunnelRendererFeature.cs" />
+    <Compile Include="Assets\COCO\coco的程式碼\進螞蟻窩迷宮.cs" />
     <Compile Include="Assets\Samples\Universal RP\14.0.9\URP Package Samples\LensFlares\Scripts\ScreenSpacePlacement.cs" />
     <Compile Include="Assets\Shine\C#\時鐘特寫\ClockController.cs" />
     <Compile Include="Assets\Shine\C#\OpenUICloseClickObj.cs" />
