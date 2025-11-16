@@ -69,6 +69,7 @@
     <Compile Include="Assets\Shine\C#\時鐘特寫\HandSelectable.cs" />
     <Compile Include="Assets\COCO\coco的程式碼\翻頁動畫.cs" />
     <Compile Include="Assets\COCO\coco的程式碼\鑰匙開門.cs" />
+    <Compile Include="Assets\COCO\coco的程式碼\truecandy.cs" />
     <Compile Include="Assets\Shine\C#\ClickCandleOpenSavePage.cs" />
     <Compile Include="Assets\COCO\coco的程式碼\進入修補娃娃.cs" />
     <Compile Include="Assets\Shine\C#\LoadObj.cs" />
@@ -124,6 +125,7 @@
     <Compile Include="Assets\COCO\coco的程式碼\互動物紀錄.cs" />
     <Compile Include="Assets\Shine\C#\SetAndGetSaveData.cs" />
     <Compile Include="Assets\COCO\coco的程式碼\TargetItem.cs" />
+    <Compile Include="Assets\COCO\coco的程式碼\粉糖劇情.cs" />
     <Compile Include="Assets\COCO\coco的程式碼\ToolDrag.cs" />
     <Compile Include="Assets\Samples\Universal RP\14.0.9\URP Package Samples\RendererFeatures\DistortTunnel\DistortTunnelRendererFeature.cs" />
     <Compile Include="Assets\COCO\coco的程式碼\進螞蟻窩迷宮.cs" />

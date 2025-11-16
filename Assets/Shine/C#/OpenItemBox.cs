@@ -119,8 +119,8 @@ public class OpenItemBox : MonoBehaviour
         {
             case "書本":
                 return Resources.Load<Sprite>("Icons/book");
-            case "信件":
-                return Resources.Load<Sprite>("Icons/letter");
+            case "粉糖果":
+                return Resources.Load<Sprite>("Icons/truecandy");
             case "玩偶":
                 return Resources.Load<Sprite>("Icons/doll");
             // 可繼續擴充
