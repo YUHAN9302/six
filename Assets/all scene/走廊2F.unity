@@ -632,8 +632,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.0002501011, y: 0, z: 0}
-    m_Extent: {x: 6.72025, y: 6.7207, z: 0}
+    m_Center: {x: 0.00029993057, y: 0, z: 0}
+    m_Extent: {x: 6.7202, y: 6.7209, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -2663,6 +2663,7 @@ RectTransform:
   - {fileID: 267935883}
   - {fileID: 886861984}
   - {fileID: 545412096}
+  - {fileID: 1223299815}
   - {fileID: 369969014}
   - {fileID: 1969909322}
   m_Father: {fileID: 0}
@@ -3752,8 +3753,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.00049996376, y: -0.00049996376, z: 0}
-    m_Extent: {x: 6.7199, y: 6.7204, z: 0}
+    m_Center: {x: -0.0001001358, y: -0.00060009956, z: 0}
+    m_Extent: {x: 6.7202, y: 6.7204, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -4216,8 +4217,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0, y: -0.00049996376, z: 0}
-    m_Extent: {x: 5.9409, y: 5.9400997, z: 0}
+    m_Center: {x: -0.00020003319, y: -0.000099897385, z: 0}
+    m_Extent: {x: 5.9400997, y: 5.9409, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -7555,7 +7556,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   boxAnimator: {fileID: 886861985}
   boxButton: {fileID: 886861987}
-  ItemSlots: {fileID: 0}
+  ItemSlots: {fileID: 1223299810}
   boxSoundObject: {fileID: 2106311939}
   boxCloseSoundObject: {fileID: 430536685}
 --- !u!114 &886861987
@@ -10777,11 +10778,11 @@ RectTransform:
   - {fileID: 957322563}
   - {fileID: 1432226995}
   - {fileID: 598404445}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 277592073}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 155, y: 627.99994}
+  m_AnchoredPosition: {x: 155, y: 87.99988}
   m_SizeDelta: {x: 250, y: 896.674}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1253339293
@@ -14748,8 +14749,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.0002501011, y: -0.0000500679, z: 0}
-    m_Extent: {x: 6.7206497, y: 6.72005, z: 0}
+    m_Center: {x: -0.00020003319, y: -0.00049996376, z: 0}
+    m_Extent: {x: 6.7202997, y: 6.7201004, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -19578,4 +19579,3 @@ SceneRoots:
   - {fileID: 2049773252}
   - {fileID: 691121952}
   - {fileID: 200846147}
-  - {fileID: 1223299815}
