@@ -47,7 +47,5 @@ public class Candy : MonoBehaviour
             Debug.LogWarning("❌ 尚未選擇存檔，無法自動儲存");
         }
 
-        // 隱藏書本物件本體
-        gameObject.SetActive(false);
     }
 }

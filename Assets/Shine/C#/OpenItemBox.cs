@@ -15,35 +15,44 @@ public class OpenItemBox : MonoBehaviour
 
     private void OnEnable()
     {
+        Debug.Log($"[OpenItemBox] 當前 SelectID = {SetAndGetSaveData.SelectID}");
 
-
+        // 如果還沒選擇存檔，就把所有欄位關閉並清空圖示
         if (SetAndGetSaveData.SelectID == 0)
         {
-            ToggleAllSlots(false);
+            ToggleAllSlots(false, true);
             return;
         }
+
         var saveMgr = FindObjectOfType<SaveManager>();
         if (saveMgr == null)
         {
-            ToggleAllSlots(false);
+            ToggleAllSlots(false, true);
             Debug.LogWarning("[OpenItemBox] 找不到 SaveManager。");
             return;
         }
 
+        // 讀取玩家狀態：只關心 items 這個 List
         var (_, _, _, items, _) = saveMgr.LoadPlayerState(SetAndGetSaveData.SelectID);
         if (items == null)
             items = new List<string>();
 
+        // 確保有固定 5 格，沒有的用空字串補
         while (items.Count < SLOT_COUNT)
             items.Add(string.Empty);
 
+        // 逐格更新背包顯示
         for (int i = 0; i < itemImages.Length; i++)
         {
             var slot = itemImages[i];
             if (slot == null) continue;
 
-            string itemName = (i < items.Count) ? items[i] : "";
-            bool hasItem = !string.IsNullOrEmpty(itemName);
+            string rawName = (i < items.Count) ? items[i] : "";
+            string itemName = rawName == null ? "" : rawName.Trim(); // 去掉前後空白
+            bool hasItem = !string.IsNullOrWhiteSpace(itemName);
+
+            // Debug 每一格實際拿到的名稱與長度
+            Debug.Log($"[OpenItemBox] slot {i} raw='{rawName}' | trim='{itemName}' | length={itemName.Length}");
 
             if (slot.transform.childCount > 0)
             {
@@ -52,20 +61,30 @@ public class OpenItemBox : MonoBehaviour
                 {
                     icon.SetActive(hasItem);
 
-                    if (hasItem)
+                    var image = icon.GetComponent<Image>();
+                    if (image != null)
                     {
-                        var image = icon.GetComponent<Image>();
-                        if (image != null)
+                        if (hasItem)
                         {
+                            // 根據名稱載入圖示
                             Sprite itemSprite = LoadIconSpriteForItem(itemName);
-                            if (itemSprite != null)
+
+                            // 無論有沒有找到，都重新指定 sprite，避免殘留舊圖片
+                            image.sprite = itemSprite;
+
+                            if (itemSprite == null)
                             {
-                                image.sprite = itemSprite;
+                                Debug.LogWarning($"[OpenItemBox] 找不到對應圖片：'{itemName}'，已清除此格圖示");
                             }
                             else
                             {
-                                Debug.LogWarning($"找不到對應圖片：{itemName}");
+                                Debug.Log($"[OpenItemBox] slot {i} 成功載入圖示：'{itemName}'");
                             }
+                        }
+                        else
+                        {
+                            // 沒物品時，強制清空 sprite，避免出現之前的圖片
+                            image.sprite = null;
                         }
                     }
                 }
@@ -75,6 +94,9 @@ public class OpenItemBox : MonoBehaviour
         Debug.Log("[OpenItemBox] 目前道具：" + string.Join(",", items));
     }
 
+    /// <summary>
+    /// 點擊某一格背包 icon，開啟對應的資訊視窗
+    /// </summary>
     public void OpenItemInfo(int id)
     {
         if (itemImages == null || itemInfo == null) return;
@@ -94,7 +116,10 @@ public class OpenItemBox : MonoBehaviour
         }
     }
 
-    private void ToggleAllSlots(bool enable)
+    /// <summary>
+    /// 開或關全部欄位，同時可選擇是否清空 sprite
+    /// </summary>
+    private void ToggleAllSlots(bool enable, bool clearSprite = false)
     {
         for (int i = 0; i < itemImages.Length; i++)
         {
@@ -104,28 +129,61 @@ public class OpenItemBox : MonoBehaviour
             if (slot.transform.childCount > 0)
             {
                 var icon = slot.transform.GetChild(0).gameObject;
-                if (icon != null) icon.SetActive(enable);
+                if (icon != null)
+                {
+                    icon.SetActive(enable);
+
+                    if (clearSprite)
+                    {
+                        var image = icon.GetComponent<Image>();
+                        if (image != null)
+                            image.sprite = null;
+                    }
+                }
             }
         }
     }
 
     /// <summary>
     /// 根據道具名稱載入對應圖示（需放在 Resources/Icons 目錄）
+    /// 檔案路徑範例：Assets/Resources/Icons/book.png
     /// </summary>
     private Sprite LoadIconSpriteForItem(string itemName)
     {
-        // 對應道具名稱與圖片檔名
-        switch (itemName)
+        // 先做一次標準化
+        string key = itemName.Trim();
+
+        // 嚴格對照（完全一樣）
+        switch (key)
         {
             case "書本":
                 return Resources.Load<Sprite>("Icons/book");
-            case "粉糖果":
+            case "糖果":
                 return Resources.Load<Sprite>("Icons/truecandy");
             case "玩偶":
                 return Resources.Load<Sprite>("Icons/doll");
-            // 可繼續擴充
-            default:
-                return null;
         }
+
+        // 如果嚴格比對失敗，再做「模糊比對」，避免名稱有多加文字
+        if (key.Contains("書"))
+        {
+            Debug.Log($"[OpenItemBox] 使用模糊比對，'{itemName}' 視為 書本");
+            return Resources.Load<Sprite>("Icons/book");
+        }
+
+        if (key.Contains("糖"))
+        {
+            Debug.Log($"[OpenItemBox] 使用模糊比對，'{itemName}' 視為 糖果");
+            return Resources.Load<Sprite>("Icons/truecandy");
+        }
+
+        if (key.Contains("偶"))
+        {
+            Debug.Log($"[OpenItemBox] 使用模糊比對，'{itemName}' 視為 玩偶");
+            return Resources.Load<Sprite>("Icons/doll");
+        }
+
+        Debug.LogWarning($"[OpenItemBox] 無法識別的道具名稱：'{itemName}'");
+        return null;
     }
 }

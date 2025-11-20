@@ -14,7 +14,9 @@ public class 登入 : MonoBehaviour
     public GameObject transitionObject; // 轉場動畫的 GameObject（帶有 Animator）
     public float animationDuration = 0.2f;  // 動畫的持續時間（設為動畫長度）
 
-
+    public int saveSlot = 1;
+    public Vector2 startPos = new Vector2(0, 0);
+    public float defaultSpeed = 3f;
     // Start is called before the first frame update
     void Start()
     {
@@ -46,6 +48,7 @@ public class 登入 : MonoBehaviour
     {
         PlayerController.direction = -1;
         PlayerController.isClothed = false;
+       FindObjectOfType<SaveManager>().CreateNewGameSave(saveSlot, startPos, defaultSpeed, false);
 
         SetAndGetSaveData.SelectID = 0;
         StartCoroutine(PlayAnimationAndLoadScene());
