@@ -85,7 +85,11 @@ public class SetAndGetSaveData : MonoBehaviour
                     var book = GameObject.Find("Book");
                     if (book != null) book.SetActive(false);
                 }
-
+                if (item == "糖果")
+                {
+                    var candy = GameObject.Find("Candy");
+                    if (candy != null) candy.SetActive(false);
+                }
                 // ➕ 若有其他道具，未來可加上：
                 // else if (item == "信件") { ... }
             }

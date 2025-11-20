@@ -29,6 +29,10 @@ public class DialogueUI : MonoBehaviour
 
     void ShowNextLine()
     {
+        Debug.Log(currentLine);
+        Debug.Log(dialogueManager.dialogueLines.Count);
+
+        Debug.Log(currentLine < dialogueManager.dialogueLines.Count);
         if (currentLine < dialogueManager.dialogueLines.Count)
         {
             var line = dialogueManager.dialogueLines[currentLine];
