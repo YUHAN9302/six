@@ -162,6 +162,8 @@ public class OpenItemBox : MonoBehaviour
                 return Resources.Load<Sprite>("Icons/truecandy");
             case "玩偶":
                 return Resources.Load<Sprite>("Icons/doll");
+            case "金平糖":
+                return Resources.Load<Sprite>("Icons/candy");
         }
 
         // 如果嚴格比對失敗，再做「模糊比對」，避免名稱有多加文字
@@ -171,12 +173,16 @@ public class OpenItemBox : MonoBehaviour
             return Resources.Load<Sprite>("Icons/book");
         }
 
-        if (key.Contains("糖"))
+        if (key.Contains("果"))
         {
             Debug.Log($"[OpenItemBox] 使用模糊比對，'{itemName}' 視為 糖果");
             return Resources.Load<Sprite>("Icons/truecandy");
         }
-
+        if (key.Contains("糖"))
+        {
+            Debug.Log($"[OpenItemBox] 使用模糊比對，'{itemName}' 視為 金平糖");
+            return Resources.Load<Sprite>("Icons/candy");
+        }
         if (key.Contains("偶"))
         {
             Debug.Log($"[OpenItemBox] 使用模糊比對，'{itemName}' 視為 玩偶");

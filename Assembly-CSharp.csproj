@@ -152,6 +152,7 @@
     <Compile Include="Assets\FOX\fox的程式\用餐劇情觸發.cs" />
     <Compile Include="Assets\COCO\coco的程式碼\登入.cs" />
     <Compile Include="Assets\COCO\coco的程式碼\跳過開場動畫.cs" />
+    <Compile Include="Assets\Shine\C#\Candy1.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
