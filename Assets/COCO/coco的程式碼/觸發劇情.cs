@@ -25,7 +25,8 @@ public class 觸發劇情 : MonoBehaviour
             (TriggerManager.Instance != null && TriggerManager.Instance.IsObjectClicked(triggerKey)))
         {
             if (targetObject != null)
-                Destroy(targetObject);
+                 Destroy(targetObject);
+
             // 觸發物件本身可以選擇保留或刪除，這裡保留
         }
     }

@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 
 public class 用餐劇情觸發 : MonoBehaviour
@@ -11,8 +12,21 @@ public class 用餐劇情觸發 : MonoBehaviour
     private bool triggered = false;
     private static bool alreadyTriggered = false; // 靜態變數，跨場景保留狀態
 
+    public List<GameObject> Obj;
+
+    void Awake()
+    {
+        if (alreadyTriggered)
+        {
+            for (int i = 0; i < Obj.Count; i++)
+            {
+                if (Obj[i].GetComponent<Collider2D>())
+                    Obj[i].GetComponent<Collider2D>().enabled = true;
+            }
+        }
+    }
     //[Header("開場物件")]
-   // public 客廳開頭 開場物件;  // 指向開場物件
+    // public 客廳開頭 開場物件;  // 指向開場物件
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

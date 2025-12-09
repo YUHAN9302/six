@@ -38,7 +38,7 @@ public class DialogueUI : MonoBehaviour
             var line = dialogueManager.dialogueLines[currentLine];
             speakerText.text = line.speaker;
             contentText.text = line.content;
-
+            audioSource.Stop();
             if (dialogueImage != null && line.image != null)
                 dialogueImage.sprite = line.image;
             if (dialogueImageBig != null && line.bigImage != null)

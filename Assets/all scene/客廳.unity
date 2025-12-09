@@ -893,8 +893,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.00014996529, y: -0.00020003319, z: 0}
-    m_Extent: {x: 6.72075, y: 6.7204, z: 0}
+    m_Center: {x: 0, y: 0.00014996529, z: 0}
+    m_Extent: {x: 6.7204, y: 6.72075, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -3748,8 +3748,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.00034999847, y: -0.00075006485, z: 0}
-    m_Extent: {x: 6.72035, y: 6.72025, z: 0}
+    m_Center: {x: 0.00049996376, y: -0.0002501011, z: 0}
+    m_Extent: {x: 6.7199, y: 6.7206497, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -10046,10 +10046,10 @@ MonoBehaviour:
       - m_Target: {fileID: 2058159756}
         m_TargetAssemblyTypeName: OpenItemBox, Assembly-CSharp
         m_MethodName: OpenItemInfo
-        m_Mode: 3
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 903021601}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -10293,6 +10293,14 @@ MonoBehaviour:
   "\u7528\u9910\u5287\u60C5": "\u7528\u9910\u5287\u60C5"
   transitionAnimationObject: {fileID: 345741833}
   animationDuration: 1
+  Obj:
+  - {fileID: 1312667920}
+  - {fileID: 1337531598}
+  - {fileID: 919175978}
+  - {fileID: 409104826}
+  - {fileID: 1347195214}
+  - {fileID: 575020007}
+  - {fileID: 209339578}
 --- !u!61 &907017279
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -11162,10 +11170,10 @@ MonoBehaviour:
       - m_Target: {fileID: 2058159756}
         m_TargetAssemblyTypeName: OpenItemBox, Assembly-CSharp
         m_MethodName: OpenItemInfo
-        m_Mode: 3
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 970112497}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -11394,10 +11402,10 @@ MonoBehaviour:
       - m_Target: {fileID: 2058159756}
         m_TargetAssemblyTypeName: OpenItemBox, Assembly-CSharp
         m_MethodName: OpenItemInfo
-        m_Mode: 3
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 984261965}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -12248,8 +12256,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.00040006638, y: -0.00090003014, z: 0}
-    m_Extent: {x: 6.7204, y: 6.7200003, z: 0}
+    m_Center: {x: 0.000099897385, y: 0.00044989586, z: 0}
+    m_Extent: {x: 6.7202997, y: 6.72025, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -13031,8 +13039,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.00020003319, y: -0.00060009956, z: 0}
-    m_Extent: {x: 6.7206, y: 6.7204, z: 0}
+    m_Center: {x: -0.0001502037, y: 0.00044989586, z: 0}
+    m_Extent: {x: 6.72085, y: 6.7199497, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -13464,8 +13472,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.00045013428, y: 0, z: 0}
-    m_Extent: {x: 6.71975, y: 6.7202, z: 0}
+    m_Center: {x: 0, y: -0.00040006638, z: 0}
+    m_Extent: {x: 6.7205, y: 6.7205, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -14569,10 +14577,10 @@ MonoBehaviour:
       - m_Target: {fileID: 2058159756}
         m_TargetAssemblyTypeName: OpenItemBox, Assembly-CSharp
         m_MethodName: OpenItemInfo
-        m_Mode: 3
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 1297400439}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -17502,10 +17510,10 @@ MonoBehaviour:
       - m_Target: {fileID: 2058159756}
         m_TargetAssemblyTypeName: OpenItemBox, Assembly-CSharp
         m_MethodName: OpenItemInfo
-        m_Mode: 3
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 1449926030}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -17635,10 +17643,10 @@ MonoBehaviour:
       - m_Target: {fileID: 2058159756}
         m_TargetAssemblyTypeName: OpenItemBox, Assembly-CSharp
         m_MethodName: OpenItemInfo
-        m_Mode: 3
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 1455277949}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -19330,10 +19338,10 @@ MonoBehaviour:
       - m_Target: {fileID: 2058159756}
         m_TargetAssemblyTypeName: OpenItemBox, Assembly-CSharp
         m_MethodName: OpenItemInfo
-        m_Mode: 3
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 1611343956}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -21724,8 +21732,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.00029993057, y: -0.0001001358, z: 0}
-    m_Extent: {x: 5.9404, y: 5.94, z: 0}
+    m_Center: {x: 0.00034999847, y: -0.0001001358, z: 0}
+    m_Extent: {x: 5.94035, y: 5.9396, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0

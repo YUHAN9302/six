@@ -12,7 +12,7 @@ public class OpenItemBox : MonoBehaviour
     public GameObject[] itemInfo;
 
     private const int SLOT_COUNT = 5;
-
+    int id;
     private void OnEnable()
     {
         Debug.Log($"[OpenItemBox] 當前 SelectID = {SetAndGetSaveData.SelectID}");
@@ -95,24 +95,54 @@ public class OpenItemBox : MonoBehaviour
     }
 
     /// <summary>
-    /// 點擊某一格背包 icon，開啟對應的資訊視窗
+    /// 點擊任一個道具按鈕時呼叫
     /// </summary>
-    public void OpenItemInfo(int id)
+    public void OpenItemInfo(Button btn)
     {
-        if (itemImages == null || itemInfo == null) return;
-        if (id < 0 || id >= itemImages.Length || id >= itemInfo.Length) return;
+        if (btn == null) return;
 
-        var slot = itemImages[id];
-        if (slot == null) return;
-
-        if (slot.transform.childCount > 0)
+        // 1. 從被點擊的按鈕往下找圖示 Image
+        Image iconImage = btn.transform.GetChild(0).GetComponent<Image>();
+        if (iconImage == null || iconImage.sprite == null)
         {
-            var icon = slot.transform.GetChild(0).gameObject;
-            if (icon != null && icon.activeSelf)
-            {
-                if (itemInfo[id] != null)
-                    itemInfo[id].SetActive(true);
-            }
+            Debug.LogWarning("按鈕底下找不到圖示 Image 或沒有 sprite");
+            return;
+        }
+
+        string spriteName = iconImage.sprite.name;
+        Debug.Log("被點擊道具 spriteName = " + spriteName);
+
+        // 2. sprite 名稱轉成 id
+        int id = GetItemID(spriteName);
+        if (id < 0)
+        {
+            Debug.LogWarning("此 sprite 沒有對應 id：" + spriteName);
+            return;
+        }
+
+        // 3. 先把所有說明關掉
+        for (int i = 0; i < itemInfo.Length; i++)
+        {
+            if (itemInfo[i] != null)
+                itemInfo[i].SetActive(false);
+        }
+
+        // 4. 開啟對應說明
+        if (id < itemInfo.Length && itemInfo[id] != null)
+        {
+            itemInfo[id].SetActive(true);
+            Debug.Log("開啟 itemInfo[" + id + "]");
+        }
+    }
+
+    private int GetItemID(string spriteName)
+    {
+        switch (spriteName)
+        {
+            case "book": return 0;
+            case "candy": return 1;
+            case "truecandy": return 2;
+            default: return -1;
         }
     }
 
