@@ -38,22 +38,24 @@ public class 互動物紀錄 : MonoBehaviour
     {
         if (hasInteracted) return; // 已互動過不再觸發
 
-        hasInteracted = true;
+      
+            hasInteracted = true;
 
-        // ✅ 記錄互動狀態
-        位置紀錄.AddInteraction(objectID);
-        Debug.Log($"互動：{objectID}");
+            // ✅ 記錄互動狀態
+            位置紀錄.AddInteraction(objectID);
+            Debug.Log($"互動：{objectID}");
 
-        // ✅ 播放音效
-        if (interactSound != null)
-            interactSound.Play();
+            // ✅ 播放音效
+            if (interactSound != null)
+                interactSound.Play();
 
-        // ✅ 關閉自己（若設定）
-        if (disableAfterInteract)
-            gameObject.SetActive(false);
+            // ✅ 關閉自己（若設定）
+            if (disableAfterInteract)
+                gameObject.SetActive(false);
 
-        // ✅ 若指定新的物件 → 立即開啟
-        if (newObjectToEnable != null)
-            newObjectToEnable.SetActive(true);
+            // ✅ 若指定新的物件 → 立即開啟
+            if (newObjectToEnable != null)
+                newObjectToEnable.SetActive(true);
+        
     }
 }

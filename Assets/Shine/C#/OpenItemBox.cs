@@ -12,7 +12,10 @@ public class OpenItemBox : MonoBehaviour
     public GameObject[] itemInfo;
 
     private const int SLOT_COUNT = 5;
-    int id;
+    static public int id;
+
+    [Header("璐璐_TRUE糖")]
+    public GameObject LuluTrue;
     private void OnEnable()
     {
         Debug.Log($"[OpenItemBox] 當前 SelectID = {SetAndGetSaveData.SelectID}");
@@ -128,10 +131,14 @@ public class OpenItemBox : MonoBehaviour
         }
 
         // 4. 開啟對應說明
-        if (id < itemInfo.Length && itemInfo[id] != null)
+        if (id < itemInfo.Length && itemInfo[id] != null&& id!=2)
         {
             itemInfo[id].SetActive(true);
             Debug.Log("開啟 itemInfo[" + id + "]");
+        }
+        if (id == 2&& LuluTrue!=null)
+        {
+            LuluTrue.SetActive(true);
         }
     }
 
@@ -140,8 +147,8 @@ public class OpenItemBox : MonoBehaviour
         switch (spriteName)
         {
             case "book": return 0;
-            case "candy": return 1;
-            case "truecandy": return 2;
+            case "candy": return 2;
+            case "truecandy": return 1;
             default: return -1;
         }
     }
