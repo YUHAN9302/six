@@ -910,8 +910,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.00044989586, y: -0.0002501011, z: 0}
-    m_Extent: {x: 6.72025, y: 6.7203503, z: 0}
+    m_Center: {x: -0.00014996529, y: -0.00024986267, z: 0}
+    m_Extent: {x: 6.72025, y: 6.72045, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -5492,8 +5492,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.00014996529, y: -0.00040006638, z: 0}
-    m_Extent: {x: 6.72025, y: 6.7206, z: 0}
+    m_Center: {x: 0.0002501011, y: -0.00034999847, z: 0}
+    m_Extent: {x: 6.7206497, y: 6.72055, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -6193,8 +6193,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.00039982796, y: 0.00020003319, z: 0}
-    m_Extent: {x: 5.9400997, y: 5.9402, z: 0}
+    m_Center: {x: 0, y: -0.0001001358, z: 0}
+    m_Extent: {x: 5.9409, y: 5.9406, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -24568,8 +24568,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.0000500679, y: -0.00034999847, z: 0}
-    m_Extent: {x: 6.71975, y: 6.71995, z: 0}
+    m_Center: {x: 0.0002501011, y: -0.0001001358, z: 0}
+    m_Extent: {x: 6.7203503, y: 6.7208, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -28553,7 +28553,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1531198515
   m_SortingLayer: 3
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 6f474346110c4a1499ecf813b1762f27, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -30014,7 +30014,9 @@ MonoBehaviour:
   - {fileID: 1998948166}
   - {fileID: 1049032814}
   - {fileID: 521708852}
+  luluDoll: {fileID: 2135054591}
   LuluTrue: {fileID: 1686807706}
+  LuluBAD: {fileID: 2000696525}
 --- !u!114 &1991195541
 MonoBehaviour:
   m_ObjectHideFlags: 0

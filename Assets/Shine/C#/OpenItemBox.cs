@@ -12,10 +12,19 @@ public class OpenItemBox : MonoBehaviour
     public GameObject[] itemInfo;
 
     private const int SLOT_COUNT = 5;
-    static public int id;
+
+    [Header("選擇道具 ID（給 NPC 判斷用）")]
+    public static int SelectedItemID = -1;
+
+    [Header("Lulu 抱娃物件（選道具後會隱藏）")]
+    public GameObject luluDoll;
 
     [Header("璐璐_TRUE糖")]
     public GameObject LuluTrue;
+
+    [Header("璐璐_BAD糖")]
+    public GameObject LuluBAD;
+
     private void OnEnable()
     {
         Debug.Log($"[OpenItemBox] 當前 SelectID = {SetAndGetSaveData.SelectID}");
@@ -123,6 +132,15 @@ public class OpenItemBox : MonoBehaviour
             return;
         }
 
+        // 記錄玩家選到哪個物品（NPC 會用到）
+        SelectedItemID = id;
+
+        Debug.Log($"[OpenItemBox] 玩家選擇了物品 ID = {id}");
+
+        // 隱藏 Lulu 抱娃（你要求的功能）
+        if (luluDoll != null)
+            luluDoll.SetActive(false);
+
         // 3. 先把所有說明關掉
         for (int i = 0; i < itemInfo.Length; i++)
         {
@@ -131,14 +149,23 @@ public class OpenItemBox : MonoBehaviour
         }
 
         // 4. 開啟對應說明
-        if (id < itemInfo.Length && itemInfo[id] != null&& id!=2)
+        if (id < itemInfo.Length && itemInfo[id] != null && id != 1 && id != 2)
         {
             itemInfo[id].SetActive(true);
             Debug.Log("開啟 itemInfo[" + id + "]");
         }
-        if (id == 2&& LuluTrue!=null)
+        // TRUE 糖：id = 1
+        if (id == 1 && LuluTrue != null)
         {
             LuluTrue.SetActive(true);
+            LuluBAD.SetActive(false);
+        }
+
+        // BAD 糖（金平糖）：id = 2
+        if (id == 2 && LuluBAD != null)
+        {
+            LuluBAD.SetActive(true);
+            LuluTrue.SetActive(false);
         }
     }
 
