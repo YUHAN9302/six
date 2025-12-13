@@ -844,6 +844,9 @@ MonoBehaviour:
   - {fileID: 450487536}
   itemInfo:
   - {fileID: 0}
+  luluDoll: {fileID: 0}
+  LuluTrue: {fileID: 0}
+  LuluBAD: {fileID: 0}
 --- !u!114 &132050492
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9742,10 +9745,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Obj:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 374636315}
+  - {fileID: 1817698660}
 --- !u!114 &1403952846
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15313,6 +15314,9 @@ MonoBehaviour:
   - {fileID: 1624057065}
   itemInfo:
   - {fileID: 0}
+  luluDoll: {fileID: 0}
+  LuluTrue: {fileID: 0}
+  LuluBAD: {fileID: 0}
 --- !u!114 &2121269218
 MonoBehaviour:
   m_ObjectHideFlags: 0
