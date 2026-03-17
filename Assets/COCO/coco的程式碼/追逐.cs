@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class 待續 : MonoBehaviour
+public class 追逐 : MonoBehaviour
 {
     [Header("音效與動畫")]
     public GameObject openJarSoundObject;        // 開螞蟻罐音效

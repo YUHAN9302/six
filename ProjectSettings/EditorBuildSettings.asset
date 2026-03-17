@@ -44,4 +44,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/all scene/To be continued.unity
     guid: 98a5df43c73cbdb4b8a4e6c0770d05d2
+  - enabled: 1
+    path: "Assets/all scene/\u59B9\u59B9\u623F\u9593-\u8FFD\u9010\u6230.unity"
+    guid: 69d582717be75c3408ecc0f39a8d4b4b
   m_configObjects: {}

@@ -910,8 +910,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.00044989586, y: 0.0000500679, z: 0}
-    m_Extent: {x: 6.7196503, y: 6.72045, z: 0}
+    m_Center: {x: 0.00029993057, y: -0.00040006638, z: 0}
+    m_Extent: {x: 6.7206, y: 6.7206, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -5492,8 +5492,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.00055003166, y: -0.00049996376, z: 0}
-    m_Extent: {x: 6.7197504, y: 6.7201004, z: 0}
+    m_Center: {x: -0.00040006638, y: 0.00055003166, z: 0}
+    m_Extent: {x: 6.7206, y: 6.72025, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -6193,8 +6193,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.000300169, y: 0.00014996529, z: 0}
-    m_Extent: {x: 5.9398003, y: 5.94055, z: 0}
+    m_Center: {x: 0.000099897385, y: 0.0001502037, z: 0}
+    m_Extent: {x: 5.9404, y: 5.94065, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -24568,8 +24568,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.00014996529, y: 0.00080013275, z: 0}
-    m_Extent: {x: 6.72075, y: 6.7201, z: 0}
+    m_Center: {x: -0.0001001358, y: 0.00014996529, z: 0}
+    m_Extent: {x: 6.7202, y: 6.72005, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -30487,7 +30487,7 @@ MonoBehaviour:
   openJarSoundObject: {fileID: 0}
   closeEyesAnimationObject: {fileID: 1011085431}
   jarDialogueUI: {fileID: 521708852}
-  sceneName: To be continued
+  sceneName: "\u59B9\u59B9\u623F\u9593-\u8FFD\u9010\u6230"
 --- !u!1 &2009844126
 GameObject:
   m_ObjectHideFlags: 0

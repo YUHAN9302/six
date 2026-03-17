@@ -70,6 +70,7 @@
     <Compile Include="Assets\Shine\C#\時鐘特寫\HandSelectable.cs" />
     <Compile Include="Assets\COCO\coco的程式碼\翻頁動畫.cs" />
     <Compile Include="Assets\Shine\C#\Candy.cs" />
+    <Compile Include="Assets\COCO\coco的程式碼\追逐.cs" />
     <Compile Include="Assets\COCO\coco的程式碼\鑰匙開門.cs" />
     <Compile Include="Assets\COCO\coco的程式碼\truecandy.cs" />
     <Compile Include="Assets\Shine\C#\ClickCandleOpenSavePage.cs" />
@@ -102,7 +103,6 @@
     <Compile Include="Assets\COCO\coco的程式碼\按鈕音效.cs" />
     <Compile Include="Assets\COCO\coco的程式碼\進入下個洞.cs" />
     <Compile Include="Assets\COCO\coco的程式碼\到客廳.cs" />
-    <Compile Include="Assets\COCO\coco的程式碼\待續.cs" />
     <Compile Include="Assets\COCO\coco的程式碼\鑰匙.cs" />
     <Compile Include="Assets\COCO\coco的程式碼\ClickableObject.cs" />
     <Compile Include="Assets\COCO\coco的程式碼\轉場_長.cs" />
