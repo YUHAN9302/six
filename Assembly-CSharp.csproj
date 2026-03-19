@@ -93,6 +93,7 @@
     <Compile Include="Assets\COCO\coco的程式碼\BookAnimation.cs" />
     <Compile Include="Assets\COCO\coco的程式碼\退出特寫.cs" />
     <Compile Include="Assets\Shine\C#\Setting.cs" />
+    <Compile Include="Assets\COCO\coco的程式碼\RUN.cs" />
     <Compile Include="Assets\COCO\coco的程式碼\關閉動畫物件.cs" />
     <Compile Include="Assets\COCO\coco的程式碼\判斷待續.cs" />
     <Compile Include="Assets\Samples\Universal RP\14.0.9\URP Package Samples\RendererFeatures\DistortTunnel\DistortTunnelPass_Distort.cs" />
@@ -110,6 +111,7 @@
     <Compile Include="Assets\Shine\C#\UIBlocker.cs" />
     <Compile Include="Assets\COCO\coco的程式碼\Window.cs" />
     <Compile Include="Assets\COCO\暫停介面\SETTING.cs" />
+    <Compile Include="Assets\COCO\coco的程式碼\monster.cs" />
     <Compile Include="Assets\Samples\Universal RP\14.0.9\URP Package Samples\RendererFeatures\BlitToRTHandle\BlitToRTHandlePass.cs" />
     <Compile Include="Assets\COCO\coco的程式碼\ToolManager.cs" />
     <Compile Include="Assets\COCO\coco的程式碼\進時鐘特寫.cs" />
