@@ -1895,6 +1895,7 @@ MonoBehaviour:
   scenesToMute:
   - "\u958B\u59CB\u4ECB\u9762"
   - "\u958B\u5834\u52D5\u756B"
+  - "\u59B9\u59B9\u623F\u9593-\u8FFD\u9010\u6230"
 --- !u!1 &158105735
 GameObject:
   m_ObjectHideFlags: 0
@@ -3354,8 +3355,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.0001001358, y: -0.00020003319, z: 0}
-    m_Extent: {x: 6.7202, y: 6.7194996, z: 0}
+    m_Center: {x: 0.0000500679, y: 0.00060009956, z: 0}
+    m_Extent: {x: 6.72085, y: 6.7202997, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -11836,8 +11837,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.0001001358, y: -0.000099897385, z: 0}
-    m_Extent: {x: 6.7202, y: 6.7202997, z: 0}
+    m_Center: {x: 0.0000500679, y: 0.00014996529, z: 0}
+    m_Extent: {x: 6.72045, y: 6.7204504, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -15740,8 +15741,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.00069999695, y: -0.00020003319, z: 0}
-    m_Extent: {x: 5.9402, y: 5.9400997, z: 0}
+    m_Center: {x: 0.0005002022, y: -0.0001502037, z: 0}
+    m_Extent: {x: 5.9403, y: 5.93995, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
