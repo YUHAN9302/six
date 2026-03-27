@@ -12,6 +12,9 @@ public class monster : MonoBehaviour
     private float lastAttackTime = 0f;
     private bool playerInRange = false;
 
+    private GameObject playerObj; // 新增
+
+
     void Start()
     {
         anim = GetComponent<Animator>();
@@ -50,8 +53,11 @@ public class monster : MonoBehaviour
     public void DealDamage()
     {
         Debug.Log("攻擊玩家");
-        // 這裡可以寫扣血：
-        // player.GetComponent<PlayerHealth>().TakeDamage(10);
+
+        if (playerObj != null)
+        {
+            playerObj.GetComponent<PlayerHealth>().TakeDamage(1);
+        }
     }
 
     // 玩家碰到怪物 Collider 時觸發
@@ -60,6 +66,7 @@ public class monster : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             playerInRange = true;
+            playerObj = collision.gameObject; // 記住玩家
         }
     }
 
