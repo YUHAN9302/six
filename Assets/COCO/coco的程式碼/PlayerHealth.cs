@@ -6,6 +6,7 @@ public class PlayerHealth : MonoBehaviour
 {
     public int maxHit = 3;
     private int currentHit = 0;
+    private bool isDead = false;
 
     [Header("黑屏動畫")]
     public GameObject blackScreenObject;      // 黑屏動畫物件
@@ -18,13 +19,26 @@ public class PlayerHealth : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
+        if (isDead) return;
+
         currentHit += damage;
 
         if (currentHit >= maxHit)
         {
+            isDead = true;
             StartCoroutine(DieSequence());
         }
     }
+
+    public void InstantDie()
+    {
+        if (isDead) return;
+
+        isDead = true;
+        currentHit = maxHit;
+        StartCoroutine(DieSequence());
+    }
+
     IEnumerator DieSequence()
     {
         // 暫停遊戲

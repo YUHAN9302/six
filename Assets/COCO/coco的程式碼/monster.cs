@@ -61,12 +61,26 @@ public class monster : MonoBehaviour
     }
 
     // 玩家碰到怪物 Collider 時觸發
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            // 如果正在攻擊 → 不用直接殺（避免干擾）
+            if (isAttacking) return;
+
+            PlayerHealth playerHealth = collision.gameObject.GetComponent<PlayerHealth>();
+            if (playerHealth != null)
+            {
+                playerHealth.InstantDie();
+            }
+        }
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
             playerInRange = true;
-            playerObj = collision.gameObject; // 記住玩家
+            playerObj = collision.gameObject; //記錄玩家
         }
     }
 
