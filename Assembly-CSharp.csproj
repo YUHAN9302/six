@@ -69,6 +69,7 @@
     <Compile Include="Assets\Shine\C#\VideoEndSceneLoader.cs" />
     <Compile Include="Assets\Shine\C#\時鐘特寫\HandSelectable.cs" />
     <Compile Include="Assets\COCO\coco的程式碼\翻頁動畫.cs" />
+    <Compile Include="Assets\COCO\coco的程式碼\離開追逐.cs" />
     <Compile Include="Assets\COCO\coco的程式碼\PlayerHealth.cs" />
     <Compile Include="Assets\Shine\C#\Candy.cs" />
     <Compile Include="Assets\COCO\coco的程式碼\追逐.cs" />
@@ -82,6 +83,7 @@
     <Compile Include="Assets\COCO\coco的程式碼\BGM不中斷.cs" />
     <Compile Include="Assets\COCO\coco的程式碼\位置紀錄.cs" />
     <Compile Include="Assets\Shine\C#\OpenItemBox.cs" />
+    <Compile Include="Assets\COCO\coco的程式碼\DoorTrigger.cs" />
     <Compile Include="Assets\Samples\Universal RP\14.0.9\URP Package Samples\SharedAssets\Scripts\FirstPersonController.cs" />
     <Compile Include="Assets\FOX\fox的程式\用餐結束.cs" />
     <Compile Include="Assets\COCO\coco的程式碼\book.cs" />

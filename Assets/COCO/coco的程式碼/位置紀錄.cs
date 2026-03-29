@@ -13,6 +13,9 @@ public class 位置紀錄 : MonoBehaviour
     // ✅ 新增：紀錄互動過的物件
     private static HashSet<string> interactedObjects = new HashSet<string>();
 
+    // ✅ 新增：每扇門的進門位置
+    private static Dictionary<string, Vector3> doorEntryPositions = new Dictionary<string, Vector3>();
+
     void Awake()
     {
         if (Instance == null)
@@ -67,5 +70,17 @@ public class 位置紀錄 : MonoBehaviour
         LastPosition = null;
         LastAnimState = null;
         interactedObjects.Clear();
+    }
+    // ---------- 門前位置（最小新增） ----------
+    public static void SetDoorEntryPosition(string doorID, Vector3 pos)
+    {
+        doorEntryPositions[doorID] = pos;
+    }
+
+    public static Vector3? GetDoorEntryPosition(string doorID)
+    {
+        if (doorEntryPositions.TryGetValue(doorID, out Vector3 pos))
+            return pos;
+        return null;
     }
 }

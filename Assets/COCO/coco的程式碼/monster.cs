@@ -14,6 +14,8 @@ public class monster : MonoBehaviour
 
     private GameObject playerObj; // 新增
 
+    public float minX = 22f; // 左邊界
+
 
     void Start()
     {
@@ -23,16 +25,24 @@ public class monster : MonoBehaviour
 
     void Update()
     {
-        // 如果不是攻擊狀態 → 左移
-        if (!isAttacking)
-        {
-            transform.Translate(Vector2.left * moveSpeed * Time.deltaTime);
-        }
-
-        // 玩家在範圍內且怪物不是正在攻擊 → 攻擊
-        if (playerInRange && !isAttacking && Time.time >= lastAttackTime)
+        // 攻擊優先
+        if (playerInRange && !isAttacking)
         {
             Attack();
+        }
+        else
+        {
+            // 如果不是攻擊狀態 → 左移，但限制不超過 minX
+            if (!isAttacking)
+            {
+                float nextX = transform.position.x - moveSpeed * Time.deltaTime;
+
+                // 限制左邊界
+                if (nextX < minX)
+                    nextX = minX;
+
+                transform.position = new Vector3(nextX, transform.position.y, transform.position.z);
+            }
         }
     }
 
