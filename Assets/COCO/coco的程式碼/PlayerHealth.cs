@@ -14,6 +14,7 @@ public class PlayerHealth : MonoBehaviour
 
     [Header("UI設定")]
     public GameObject gameOverImage;          // 死亡圖片
+    public GameObject deathUI; // 死亡UI（例如整個UI面板）
     public float imageShowTime = 1f;        // 黑屏動畫到幾秒顯示圖片
     public GameObject 重來;                   // 重來按鈕
 
@@ -52,9 +53,12 @@ public class PlayerHealth : MonoBehaviour
         // 等到 UI 要出現的時間
         yield return new WaitForSecondsRealtime(imageShowTime);
 
-        // 顯示圖片
+        // 顯示圖片 + 死亡UI
         if (gameOverImage != null)
             gameOverImage.SetActive(true);
+
+        if (deathUI != null)
+            deathUI.SetActive(true);
 
         // 等到黑屏動畫結束
         yield return new WaitForSecondsRealtime(blackScreenDuration - imageShowTime);
