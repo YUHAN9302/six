@@ -9,6 +9,9 @@ public class 位置紀錄 : MonoBehaviour
 
     public static Vector3? LastPosition = null;
     public static string LastAnimState = null; // 新增：最後播放的動畫狀態名稱
+    public static string ReturnDoorID = null; // 用來回原場景
+
+    public static string LastDoorID = null; // 玩家最後經過的門
 
     // ✅ 新增：紀錄互動過的物件
     private static HashSet<string> interactedObjects = new HashSet<string>();

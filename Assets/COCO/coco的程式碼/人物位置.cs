@@ -11,21 +11,18 @@ public class 人物位置 : MonoBehaviour
     {
         bool positionSet = false;
 
-        // 先檢查場景裡的所有門是否有存門前位置
-        DoorTrigger[] doors = FindObjectsOfType<DoorTrigger>();
-        foreach (var door in doors)
-        {
-            string id = string.IsNullOrEmpty(door.doorID)
-                ? UnityEngine.SceneManagement.SceneManager.GetActiveScene().name + "_" + door.gameObject.name
-                : door.doorID;
+        //用「入口門」來決定位置
+        string returnDoorID = 位置紀錄.ReturnDoorID;
 
-            Vector3? doorPos = 位置紀錄.GetDoorEntryPosition(id);
+        if (!string.IsNullOrEmpty(returnDoorID))
+        {
+            Vector3? doorPos = 位置紀錄.GetDoorEntryPosition(returnDoorID);
+
             if (doorPos.HasValue)
             {
                 transform.position = doorPos.Value;
-                Debug.Log($"從門前位置恢復: {id} -> {doorPos.Value}");
+                Debug.Log("回到入口門位置：" + returnDoorID);
                 positionSet = true;
-                break; // 找到第一個門就用它
             }
         }
 
@@ -47,7 +44,6 @@ public class 人物位置 : MonoBehaviour
             animator.Play(lastAnim);
         }
 
-        // 清除全域 LastPosition 避免重複用到
         位置紀錄.ClearPosition();
     }
     public void SaveCurrentTransform()

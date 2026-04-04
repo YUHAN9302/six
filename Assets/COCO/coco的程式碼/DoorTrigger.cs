@@ -34,36 +34,17 @@ public class DoorTrigger : MonoBehaviour
         if (playerSpawnPoint != null)
             位置紀錄.SetDoorEntryPosition(id, playerSpawnPoint.position);
 
-        // 標記這扇門已開
-        位置紀錄.AddInteraction(id);
 
-        Debug.Log($"記錄門前位置: {id} -> {playerSpawnPoint.position}");
-    }
+        // UI用（永遠更新）
+        位置紀錄.LastDoorID = id;
 
-    private void Start()
-    {
-        string id = string.IsNullOrEmpty(doorID)
-            ? SceneManager.GetActiveScene().name + "_" + gameObject.name
-            : doorID;
-
-        // 回房間時顯示新門
-        if (nextDoorToShow != null)
+        // 關鍵：只在「第一次進入路徑」記錄入口
+        if (string.IsNullOrEmpty(位置紀錄.ReturnDoorID))
         {
-            nextDoorToShow.SetActive(位置紀錄.HasInteracted(id));
+            位置紀錄.ReturnDoorID = id;
+            Debug.Log("記錄入口門：" + id);
         }
 
-        // 回房間時顯示對話物件（等待轉場動畫播完）
-        if (dialogueToShow != null && 位置紀錄.HasInteracted(id))
-        {
-            StartCoroutine(ShowDialogueAfterTransition());
-        }
-    }
-    private IEnumerator ShowDialogueAfterTransition()
-    {
-        // 等待轉場動畫時間
-        yield return new WaitForSecondsRealtime(transitionDuration);
-
-        // 顯示對話
-        dialogueToShow.SetActive(true);
+        Debug.Log("最後經過門：" + id);
     }
 }

@@ -13,7 +13,7 @@ public class 進入修補娃娃 : MonoBehaviour
     public GameObject dialogueUI;                // 修補包點擊後的對話框
 
     [Header("場景設定")]
-    public string sceneName = "修補娃娃場景";  // 要切換的場景名稱
+    public string sceneName = "修補娃娃";  // 要切換的場景名稱
 
     private bool isClicked = false;
     private bool isDialogueFinished = false;     // 確保只切換一次場景
@@ -22,6 +22,15 @@ public class 進入修補娃娃 : MonoBehaviour
     {
         if (isClicked) return;
         isClicked = true;
+
+        // 儲存進入前位置 + 動畫
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        if (player != null)
+        {
+            var posScript = player.GetComponent<人物位置>();
+            if (posScript != null)
+                posScript.SaveCurrentTransform(); // ✅ 這裡儲存進入前位置
+        }
 
         // 開啟對話框
         if (dialogueUI != null)
@@ -47,19 +56,35 @@ public class 進入修補娃娃 : MonoBehaviour
 
     IEnumerator PlayCloseEyesAndChangeScene()
     {
-        // ...（原本動畫部分）
-
-        yield return new WaitForSeconds(1.4f);
-
-        // ✅ 儲存角色位置與動畫
+        // ✅ 先儲存玩家位置 + 動畫
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         if (player != null)
         {
             var posScript = player.GetComponent<人物位置>();
             if (posScript != null)
-                posScript.SaveCurrentTransform(); // 記錄位置 + 動畫
+                posScript.SaveCurrentTransform(); // 先記錄位置 + 動畫
         }
 
-        SceneManager.LoadScene("修補娃娃");
+        // ✅ 手動設定 ReturnDoorID，模擬「從哪扇門進來」
+        DoorTrigger door = GetComponent<DoorTrigger>();
+        if (door != null)
+            位置紀錄.ReturnDoorID = door.doorID;
+
+        // 播動畫
+        if (closeEyesAnimationObject != null)
+        {
+            closeEyesAnimationObject.SetActive(true);
+            Animator anim = closeEyesAnimationObject.GetComponent<Animator>();
+            if (anim != null)
+            {
+                anim.SetTrigger("CloseEyes");
+                yield return new WaitForSeconds(1f); // 動畫播放
+            }
+        }
+
+        yield return new WaitForSeconds(0.4f); // 原本等待的額外延遲
+
+        // 切換場景
+        SceneManager.LoadScene(sceneName);
     }
 }

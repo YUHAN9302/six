@@ -14,6 +14,8 @@ public class TargetItem : MonoBehaviour
     public RectTransform needleThreadTargetPos;
     private Vector2 needleThreadStartPos;
 
+    public string returnDoorID = "包";
+
     [Header("工具與固定位置")]
     public GameObject needle;       // 針
     public GameObject thread;       // 線
@@ -227,7 +229,12 @@ public class TargetItem : MonoBehaviour
     {
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         if (player != null)
-            位置紀錄.SetPosition(player.transform.position);
+        {
+            // 將玩家返回門設定給位置紀錄，而不是直接 SetPosition
+            // 假設你在 Inspector 或 TargetItem 中設定 returnDoorID
+            if (!string.IsNullOrEmpty(returnDoorID))
+                位置紀錄.ReturnDoorID = returnDoorID;
+        }
 
         if (closeEyesAnimationObject != null)
         {
